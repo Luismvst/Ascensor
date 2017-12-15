@@ -37,7 +37,7 @@ end Clock_Divider_tb;
 architecture Behavioral of Clock_Divider_tb is
 
     --Declaración de componentes
-    COMPONENT Clock_Divider 
+    COMPONENT clk_divider 
     PORT(
         clk: IN STD_LOGIC;
         reset: IN STD_LOGIC;
@@ -55,14 +55,14 @@ architecture Behavioral of Clock_Divider_tb is
     
     begin
         --instanciacion test
-        test : Clock_Divider PORT MAP (
-            clk  => clk,
-            reset => rest,
+        uut : clk_divider PORT MAP (
+            clk  => clk;
+            reset => reset;
             clk_out => clk_out
         );
         
         --Definicion del proceso Clock
-        clk_process : process ()
+        clk_process : process 
         begin
             clk <= '0';
             wait for clk_period/2;
@@ -71,7 +71,7 @@ architecture Behavioral of Clock_Divider_tb is
         end process;
         
         --Stimulus process
-        stim_process : process () 
+        stim_process : process 
         begin
             --Mantener estado de reset un ratito
             wait for 100 ns;
