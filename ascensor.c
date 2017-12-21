@@ -7,13 +7,12 @@
 	bool direccion;
 };*/
 //INPUTS
-	//cada piso tiene 2 botones, si se recibe un "subir" entra un 1, si es "bajar", un 0
-	//el valor de boton significa el estado de un boton
+	//el valor de boton significa el estado de un boton (0 no pulado, 1 pulsado) y su posicion en el vector, el piso
 	bool boton [PISOS];
 
-	//piso actual del ascensor
+	//piso actual del ascensor, el piso con un 1 será la posicion del ascensor
 	//sensor de piso
-	int piso;
+	bool piso [PISOS];
 
 //OUTPUTS
 	//motor de movimiento del ascensor, con m_bajar solo astivado baja, con m_subir solo activado sube; cualquier otro quieto
@@ -33,7 +32,7 @@
 
 //nos comara el piso actual con el destino y nos devuelve un SUBIR si se sube y un BAJAR si baja; devuelve 0 para no movimiento
 int calcularMovimiento(int piso, int destino);
-bool leerBotones (bool botones [],int* piso/*, bool* direccion*/);
+bool leerBotones (bool botones [],int* destino/*, bool* direccion*/);
 /*void initMemo();*/
 
 
@@ -45,6 +44,7 @@ int main()
 	{
 		if(piso!=destino )
 		{
+			//ESTADO MOVIMIENTO
 			puertas=0;
 			int movimiento=calcularMovimiento(piso,destino);
 			if (movimiento==SUBIR)
@@ -59,10 +59,10 @@ int main()
 			}
 			continue;
 		}
+		//ESTADO REPOSO
+		puertas=1;
 		leerBotones(*boton, &destino/*, int &direccion*/);
-
 	}
-
 }
 
 
@@ -70,18 +70,18 @@ int calcularMovimiento (int piso, int destino)
 {
 	if (piso==destino)
 		return 0;
-	else if(piso-destino<0)
+	else if(piso<destino)
 		return SUBIR;
-	else if(piso-destino>0)
+	else if(piso>destino)
 		return BAJAR;
 }
-bool leerBotones (bool botones [],int* piso/*, bool* direccion*/)
+bool leerBotones (bool botones [],int* destino/*, bool* direccion*/)
 {
 	for(int n=0;n<PISOS;n++)
 	{
-		if (boton[n])
+		if (botones[n])
 		{
-			&piso=n;
+			&destino=n;
 			return true;
 		}
 	}
