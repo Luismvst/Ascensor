@@ -56,7 +56,8 @@ begin
     PORT MAP (
         code => code;
         led => segment;
-        digsel => digctrl      
+        digsel => digctrl;
+    
 
-
+  
 end Behavioral;
