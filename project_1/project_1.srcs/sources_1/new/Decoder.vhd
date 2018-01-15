@@ -37,7 +37,7 @@ entity Decoder is
         clk : in std_logic;
         code : IN STD_LOGIC_VECTOR (3 downto 0);    --Codifica nuestro piso actual
         led : OUT STD_LOGIC_VECTOR (6 downto 0);          
-        modo : out std_logic_vector (1 downto 0)   --El modo es si subimos, bajamos o nos paramos   
+        modo : in std_logic_vector (1 downto 0)   --El modo es si subimos, bajamos o nos paramos   
         
     );
 end Decoder;

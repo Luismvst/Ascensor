@@ -67,7 +67,7 @@ architecture Behavioral of Top is
         );
     END COMPONENT;
     
-    COMPONENT Ascensor
+    COMPONENT FSM
     PORT (
         boton   : in std_logic_vector (2 downto 0);
         piso    : in std_logic_vector (2 downto 0);
@@ -87,7 +87,7 @@ begin
         led => segment,
         reset => reset
         );
-    Inst_Clock_Divider_Ascensor:     Clock_Divider
+    Inst_Clock_Divider_FSM:     Clock_Divider
     GENERIC MAP ( frec => 50000000 )
     PORT MAP (
         clk => clk,
@@ -101,7 +101,7 @@ begin
                 clk_out => clk_display,     
                 reset => reset
                 );
-    Inst_Ascensor:      Ascensor
+    Inst_FSM:     FSM
     PORT MAP (
         reset => reset,
         boton => boton,
