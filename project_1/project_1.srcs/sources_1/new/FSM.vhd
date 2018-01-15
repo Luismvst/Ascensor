@@ -15,7 +15,8 @@ PORT (
 	abriendo_puerta : in std_logic;
 	cerrando_puerta : in std_logic;
 	sensor_piso : in std_logic;	--Nos indica que se encuentra en un piso adecuado para parar ( nosotros lo paramos como sensor externo)
-	boton, piso : in std_logic_vector (2 downto 0);
+	boton: in std_logic_vector (2 downto 0);
+	piso : in std_logic_vector (2 downto 0);
 	--El boton tiene un estado de reposo que es el 000 (no hay nada pulsandolo)
 	boton_pulsado : out std_logic_vector (2 downto 0);
 	accion_motor: out std_logic_vector (1 downto 0);

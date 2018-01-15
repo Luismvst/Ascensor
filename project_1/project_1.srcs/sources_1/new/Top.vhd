@@ -24,18 +24,15 @@ entity Top is
         clk       : in std_logic; 
         
         --Para el Ascensor
-        --Hay que darle una vuelta a la implementacion fisica de la FPGA
-        --con el ascensor y ClockDivider porque estos deben de ser los cables de conexion que se
-        --unan a la placa con cada entrada y salida del mismo
-        --NO ESTÁ BIEN IMPLEMENTADO, REVISAR
-        
         sensor_piso : in std_logic; --Sensor que verifica su estado para realizar la operación de abrir puertas tras haber realizado el movimiento. Para no hacer fugaz la etapa.
         boton_pulsado   : in std_logic_vector (2 downto 0);     --Boton presionado en la FPGA  
-        piso_actual   : in std_logic_vector (2 downto 0);     --Piso en el que nos encontramos
         puerta  : out std_logic;
-        piso : in std_logic_vector (3 downto 0)
-        --motor   : out std_logic_vector (1 downto 0)   --Tanto para subir como para bajar... Quizás luego quitemos el vector y hagamos dos separadas de subir y bajar
-        --motor_puerta_A    : out std_logic
+        abriendo_puerta : in std_logic;
+        cerrando_puerta : in std_logic;
+        piso : in std_logic_vector (3 downto 0);
+        motor_subir   : out std_logic;
+        motor_bajar : out std_logic;
+        motor_puerta_ascensor: out std_logic
         
     );
 end Top;
@@ -49,14 +46,12 @@ architecture Behavioral of Top is
     signal modo : std_logic_vector (1 downto 0);
     
     --Para el ascensor
+    signal piso_actual : std_logic_vector (2 downto 0);
     signal boton : std_logic_vector (2 downto 0);
-    signal motor_puerta: std_logic;
-    signal abriendo_puerta : std_logic;
-    signal cerrando_puerta : std_logic;
-    signal motor: std_logic_vector(1 downto 0);
-    
-    
-    COMPONENT decoder 
+    signal s_motor_puerta: std_logic;
+    signal s_motor: std_logic_vector(1 downto 0);  
+       
+    COMPONENT Decoder 
     PORT (
         clk     : in std_logic;
         reset   : in std_logic;
@@ -90,15 +85,26 @@ architecture Behavioral of Top is
        );
     END COMPONENT;
     
-begin
-    Inst_Decoder:   Decoder 
-    PORT MAP (
-        clk => clk,
-        code => code,
-        led => segment,
-        reset => reset, 
-         modo => modo
+    COMPONENT Motor_Puerta
+    PORT (
+        clk : in std_logic;
+        reset : in std_logic;
+        accion_motor_puerta : in std_logic;
+        motor_puerta : out std_logic
         );
+    END COMPONENT;
+    
+    COMPONENT Motor_Ascensor
+    PORT (
+        clk, reset : in std_logic;
+        accion_motor: in std_logic_vector (1 downto 0);
+        motor_subir : out std_logic;
+        motor_bajar: out std_logic
+        );
+    END COMPONENT;
+    
+begin
+    
     Inst_Clock_Divider_FSM:     Clock_Divider
     GENERIC MAP ( frec => 50000000 )
     PORT MAP (
@@ -106,28 +112,53 @@ begin
         clk_out => clk_ascensor,     
         reset => reset
         );
+        
     Inst_Clock_Divider_Display:     Clock_Divider
-            GENERIC MAP ( frec => 50000000 )
-            PORT MAP (
-                clk => clk,
-                clk_out => clk_display,     
-                reset => reset
-                );
+    GENERIC MAP ( frec => 50000000 )
+    PORT MAP (
+        clk => clk,
+        clk_out => clk_display,     
+        reset => reset
+        );
+                
+    Inst_Decoder:   Decoder 
+    PORT MAP (
+        clk => clk_display,
+        code => code,
+        led => segment,
+        reset => reset, 
+        modo => modo
+        );                       
+                
     Inst_FSM:     FSM
     PORT MAP (
         reset => reset,
         boton => boton,
         piso => piso,
-        clk => clk,
+        clk => clk_ascensor,
         sensor_piso => sensor_piso,
         abriendo_puerta => abriendo_puerta,
         cerrando_puerta => cerrando_puerta,
-        accion_motor => motor,
-        accion_motor_puerta => motor_puerta
+        accion_motor => s_motor,
+        accion_motor_puerta => s_motor_puerta
         );
         
+    Inst_Motor_Puerta:  Motor_Puerta
+    PORT MAP ( 
+        clk => clk,
+        reset => reset,
+        accion_motor_puerta => s_motor_puerta,
+        motor_puerta => motor_puerta_ascensor
+        );
         
-            
+    Inst_Motor_Ascensor : Motor_Ascensor
+    PORT MAP (
+        clk=> clk,
+        reset => reset,
+        accion_motor => s_motor,
+        motor_subir => motor_subir,
+        motor_bajar => motor_bajar
+        );            
 
   
 end Behavioral;
