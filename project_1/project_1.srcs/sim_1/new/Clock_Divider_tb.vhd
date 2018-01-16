@@ -37,11 +37,11 @@ end Clock_Divider_tb;
 architecture Behavioral of Clock_Divider_tb is
 
     --Declaración de componentes
-    COMPONENT clk_divider 
+    COMPONENT Clk_Divider 
     PORT(
         clk: IN STD_LOGIC;
         reset: IN STD_LOGIC;
-        clk_out: IN STD_LOGIC;
+        clk_out: IN STD_LOGIC
     );
     end COMPONENT;
     
@@ -56,8 +56,8 @@ architecture Behavioral of Clock_Divider_tb is
     begin
         --instanciacion test
         uut : clk_divider PORT MAP (
-            clk  => clk;
-            reset => reset;
+            clk  => clk,
+            reset => reset,
             clk_out => clk_out
         );
         

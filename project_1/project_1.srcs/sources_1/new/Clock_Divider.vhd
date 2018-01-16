@@ -68,8 +68,3 @@ begin
 clk_out <= clk_sig;
 
 end Behavioral;
-
-        
-
-
-end Behavioral;
