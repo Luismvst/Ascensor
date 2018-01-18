@@ -1,36 +1,6 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 15.12.2017 20:37:23
--- Design Name: 
--- Module Name: Decoder_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Decoder_tb is
 end Decoder_tb;
@@ -81,7 +51,9 @@ architecture Behavioral of Decoder_tb is
         stim_process : process 
         begin
             --insert stimulus here
-            --Historieta: sin reset, nos mantenemos en el piso 0 parados. Bajamos de piso 1. Reset y subimos al 3. Subimos del piso 4. Y bajamos otra vez sin reset del 1
+            --Historieta: sin reset, nos mantenemos en el piso 0 parados. 
+            --Bajamos de piso 1. Reset y subimos al 3. Subimos del piso 4. 
+            --Y bajamos otra vez sin reset del 1
             reset <= '0';
             code <= "0000";
             modo <= "00";
