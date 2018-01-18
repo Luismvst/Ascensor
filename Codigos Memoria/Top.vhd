@@ -147,7 +147,8 @@ begin
         clk => clk,
         reset => reset,
         accion_motor_puerta => s_motor_puerta,
-        motor_puerta => motor_puerta_ascensor
+        motor_puerta_abrir => motor_puerta_abrir,
+        motor_puerta_cerrar => motor_puerta_cerrar
         );
         
     Inst_Motor_Ascensor : Motor_Ascensor
