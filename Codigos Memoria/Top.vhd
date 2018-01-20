@@ -10,6 +10,8 @@ entity Top is
     Port ( 
         --Para el Decoder
         segment : out std_logic_vector ( 6 downto 0 );  --La salida de los leds
+        ctrl : out std_logic_vector (4 downto 0);
+
        
        --Reloj y reset general
         reset     : in std_logic;  
@@ -21,7 +23,7 @@ entity Top is
         sensor_piso : in std_logic; 
         
         boton_pulsado: in std_logic_vector (3 downto 0);     	--Boton presionado en la FPGA  
-        puerta  : out std_logic;                                --Nos muestra la puerta abierta o cerrada
+        puerta_sensor  : in std_logic;                                --Nos muestra la puerta abierta o cerrada
         puerta_abierta : in std_logic;                         --para no realizar etapas fugaces, el sensor que verifica que la puerta se ha abierto.
         puerta_cerrada : in std_logic;                         --Lo mismo que abriendo puerta pero al contrario                   
         motor_subir   : out std_logic;                          --Motor sube
@@ -34,7 +36,7 @@ end Top;
 architecture Structural of Top is
     
     --Tipos de relojes
-    signal clk_display: std_logic;
+    signal 60Hz: std_logic;
     signal clk_ascensor: std_logic;
     
     --Decoder
@@ -115,13 +117,13 @@ begin
     GENERIC MAP ( frec => 50000000 )
     PORT MAP (
         clk => clk,
-        clk_out => clk_display,     
+        clk_out => 60Hz,     
         reset => reset
         );
                 
     Inst_Decoder:   Decoder 
     PORT MAP (
-        clk => clk_display,
+        clk => 60Hz,
         code => code,
         led => segment,
         reset => reset, 
@@ -130,6 +132,7 @@ begin
                 
     Inst_FSM:     FSM
     PORT MAP (
+
         reset => reset,
         boton => boton,
         piso => code,		--El piso es el code que entra en el decoder

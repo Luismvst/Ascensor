@@ -89,7 +89,9 @@ begin
 			report "Algo no va bien . . . "
 			severity failure
 
-		puerta_
+		puerta_abierta = '1';
+		wait for 30 ns;
+		
 		wait for 30 ns;
 		assert false;
 			report "De puuta Madre, sale bien por ahora"

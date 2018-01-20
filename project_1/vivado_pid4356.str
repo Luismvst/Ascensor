@@ -1,0 +1,137 @@
+/*
+
+Vivado v2017.2 (64-bit)
+SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+
+Process ID: 4356
+License: Customer
+
+Current time: 	1/19/18 7:44:56 PM CET
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Windows 7
+OS Version: 6.1
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1366x768
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 19 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.2/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin/java.exe
+Java library paths: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o;C:/Windows/Sun/Java/bin;C:/Windows/system32;C:/Windows;C:/Xilinx/Vivado/2017.2/bin;C:/Xilinx/Vivado/2017.2/lib/win64.o;C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin/server;C:/Xilinx/Vivado/2017.2/tps/win64/jre/bin;C:/Xilinx/Vivado/2017.2/ids_lite/ISE/bin/nt64;C:/Xilinx/Vivado/2017.2/ids_lite/ISE/lib/nt64;C:/Xilinx/Vivado_HLS/2017.2/bin;C:/Program Files (x86)/Common Files/Siemens/Sqlany;C:/Program Files (x86)/Siemens/Step7/S7bin;C:/Program Files/Common Files/Siemens/Automation/Simatic OAM/bin;C:/ProgramData/Oracle/Java/javapath;C:/Program Files/Common Files/Microsoft Shared/Windows Live;C:/Program Files (x86)/Common Files/Microsoft Shared/Windows Live;C:/Windows/system32;C:/Windows;C:/Windows/System32/Wbem;C:/Windows/System32/WindowsPowerShell/v1.0/;C:/Program Files (x86)/Windows Live/Shared;C:/Program Files (x86)/Microsoft SQL Server/100/Tools/Binn/;C:/Program Files/Microsoft SQL Server/100/Tools/Binn/;C:/Program Files/Microsoft SQL Server/100/DTS/Binn/;C:/Android;C:/adb;C:/Program Files/MATLAB/R2016b/runtime/win64;C:/Program Files/MATLAB/R2016b/bin;C:/Program Files/MiKTeX 2.9/miktex/bin/x64/;C:/Program Files (x86)/Skype/Phone/;C:/Program Files/Microsoft/Web Platform Installer/;C:/Program Files (x86)/Microsoft ASP.NET/ASP.NET Web Pages/v1.0/;C:/Program Files (x86)/Windows Kits/8.0/Windows Performance Toolkit/;C:/Program Files/Microsoft SQL Server/110/Tools/Binn/;C:/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/bin;C:/Xilinx/Vivado/2017.2/tps/mingw/6.2.0/win64.o/nt/libexec/gcc/x86_64-w64-mingw32/6.2.0;.
+
+User name: 	Luis
+User home directory: C:/Users/Luis
+User working directory: C:/Users/Luis/Documents/GitHub/Ascensor/project_1
+User country: 	ES
+User language: 	es
+User locale: 	es_ES
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.2
+RDI_DATADIR: C:/Xilinx/Vivado/2017.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.2/bin
+
+User preferences location: C:/Users/Luis/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/Luis/AppData/Roaming/Xilinx/Vivado/2017.2/vivado.xml
+Vivado layouts directory: C:/Users/Luis/AppData/Roaming/Xilinx/Vivado/2017.2/layouts
+PlanAhead jar location: 	C:/Xilinx/Vivado/2017.2/lib/classes/planAhead.jar
+Vivado Look & Feel: 	[Synthetica - the extended Synth Look and Feel. - ui.g.i.H]
+Engine tmp dir: 	C:/Users/Luis/Documents/GitHub/Ascensor/project_1/.Xil/Vivado-4356-Luis-TOSH
+
+GUI allocated memory:	163 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 487 MB
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 36 MB (+35074kb) [00:00:29]
+// [Engine Memory]: 441 MB (+311368kb) [00:00:29]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bs:g (cg:JFrame):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Luis\Documents\GitHub\Ascensor\project_1\project_1.xpr. Version: Vivado v2017.2 
+// [GUI Memory]: 38 MB (+211kb) [00:00:32]
+// [Engine Memory]: 484 MB (+21776kb) [00:00:32]
+// Tcl Message: open_project C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.xpr 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// WARNING: HTimer (HSTRUtils Dump STR Log Timer) is taking too long to process. Increasing delay to 4000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 488 MB. GUI used memory: 31 MB. Current time: 1/19/18 7:44:58 PM CET
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [GUI Memory]: 42 MB (+2498kb) [00:00:47]
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 55 MB (+11484kb) [00:00:51]
+// [GUI Memory]: 61 MB (+3567kb) [00:00:53]
+// [Engine Memory]: 520 MB (+12279kb) [00:00:53]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 528 MB. GUI used memory: 36 MB. Current time: 1/19/18 7:45:19 PM CET
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 742.461 ; gain = 2.527 
+// Project name: project_1; location: C:/Users/Luis/Documents/GitHub/Ascensor/project_1; part: xc7k70tfbv676-1
+dismissDialog("Open Project"); // bs:g (cg:JFrame)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 220 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3); // B:i (D:JPanel, cg:JFrame)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 2); // B:i (D:JPanel, cg:JFrame)
+// PAPropertyPanels.initPanels (Nexys4DDR_Master.xdc) elapsed time: 0.4s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4DDR_Master.xdc]", 4, false); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4DDR_Master.xdc]", 4, false); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4DDR_Master.xdc]", 4, false, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click
+// [Engine Memory]: 562 MB (+16842kb) [00:04:43]
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // M:a (Workspace:JPanel, cg:JFrame)
+// HMemoryUtils.trashcanNow. Engine heap size: 562 MB. GUI used memory: 38 MB. Current time: 1/19/18 7:49:08 PM CET
+// Elapsed time: 16 seconds
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // M:a (Workspace:JPanel, cg:JFrame)
+// [GUI Memory]: 66 MB (+1584kb) [00:05:02]
+// Run Command: RDIResourceCommand.RDICommands_RESET_LAYOUT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DDR_Master.xdc", 1); // k:TdiGroup (j:CodeEditorDocumentPane, cg:JFrame)
+selectCodeEditor("Nexys4DDR_Master.xdc", 532, 65); // bI:J (JPanel:JComponent, cg:JFrame)
+// [GUI Memory]: 70 MB (+732kb) [00:05:14]
+selectCodeEditor("Nexys4DDR_Master.xdc", 526, 87); // bI:J (JPanel:JComponent, cg:JFrame)
+// k:x (cg:JFrame): Text Changed: addNotify
+// Elapsed time: 19 seconds
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // A:b (k:TdiGroup, cg:JFrame)
+selectButton(RDIResource.ConfirmSaveTextEditsDialog_NO, "No"); // a:JButton (JPanel:JComponent, k:x)
+dismissDialog("Text Changed"); // k:x (cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4DDR_Master.xdc]", 4, false, false, false, false, true, false); // B:i (D:JPanel, cg:JFrame) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// as:g (cg:JFrame): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a:JButton (JPanel:JComponent, as:g)
+dismissDialog("Remove Sources"); // as:g (cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys4DDR_Master.xdc]", 4, false, false, false, false, true, false); // B:i (D:JPanel, cg:JFrame) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_SRC_REPLACE_FILE, "Replace File..."); // ac:JMenuItem (ai:JPopupMenu, cg:JFrame)
+// Run Command: PAResourceCommand.PACommandNames_SRC_REPLACE_FILE
+// Elapsed time: 12 seconds
+setFileChooser("C:/Users/Luis/Documents/GitHub/Ascensor/Nexys-4-DDR-Master.xdc");
+// 'dz' command handler elapsed time: 12 seconds
+// TclEventType: FILE_SET_CHANGE
+// bs:g (cg:JFrame):  Replace File : addNotify
+// Tcl Message: update_files -from_files C:/Users/Luis/Documents/GitHub/Ascensor/Nexys-4-DDR-Master.xdc -to_files D:/Luis/UNIVERSIDAD/SED/Laboratorio/Nexys4DDR_Master.xdc -filesets [get_filesets *] 
+// Tcl Message: INFO: [filemgmt 20-762] Replacing file 'D:/Luis/UNIVERSIDAD/SED/Laboratorio/Nexys4DDR_Master.xdc' with file 'C:/Users/Luis/Documents/GitHub/Ascensor/Nexys-4-DDR-Master.xdc'. 
+dismissDialog("Replace File"); // bs:g (cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys-4-DDR-Master.xdc]", 4, false); // B:i (D:JPanel, cg:JFrame)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, Nexys-4-DDR-Master.xdc]", 4, false, false, false, false, false, true); // B:i (D:JPanel, cg:JFrame) - Double Click
+// [GUI Memory]: 80 MB (+6781kb) [00:06:00]
+// HMemoryUtils.trashcanNow. Engine heap size: 578 MB. GUI used memory: 43 MB. Current time: 1/19/18 8:19:08 PM CET
+// [GUI Memory]: 84 MB (+298kb) [00:49:03]
+// HMemoryUtils.trashcanNow. Engine heap size: 578 MB. GUI used memory: 41 MB. Current time: 1/19/18 8:49:08 PM CET
+// [GUI Memory]: 89 MB (+439kb) [01:19:19]
+// HMemoryUtils.trashcanNow. Engine heap size: 578 MB. GUI used memory: 40 MB. Current time: 1/19/18 9:19:08 PM CET
+// [GUI Memory]: 94 MB (+219kb) [01:59:01]
+// HMemoryUtils.trashcanNow. Engine heap size: 578 MB. GUI used memory: 40 MB. Current time: 1/20/18 3:06:31 PM CET
+// WARNING: HTimer (ExpRunMonitor Open Timer) is taking too long to process. Increasing delay to 6000 ms.

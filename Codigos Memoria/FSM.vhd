@@ -16,10 +16,9 @@ PORT (
 	puerta_cerrada : in std_logic;
 	sensor_piso : in std_logic;	--Nos indica que se encuentra en un piso adecuado para parar ( nosotros lo paramos como sensor externo)
 	boton: in std_logic_vector (2 downto 0);
-	piso_actual : in std_logic_vector (3 downto 0);
-	--piso : out std_logic_vector (3 downto 0);
+	piso : out std_logic_vector (3 downto 0);
 	--El boton tiene un estado de reposo que es el 000 (no hay nada pulsandolo)
-	boton_pulsado : out std_logic_vector (2 downto 0);
+	destino : out std_logic_vector (2 downto 0);
 	accion_motor: out std_logic_vector (1 downto 0);
 	accion_motor_puerta: out std_logic_vector (1 downto 0)
 	);
@@ -45,7 +44,7 @@ architecture Behavioral of FSM is
 					if boton/="000" and boton/=piso_actual then
 						presente <= cerrar;
 						boton_memoria := boton;
-						boton_pulsado <= boton_memoria;	--Esta asignación se realizará al siguiente flanco de reloj
+						destino <= boton_memoria;	--Esta asignación se realizará al siguiente flanco de reloj
 						--De esta manera no tenemos que asignar una entrada a una salida. Sino, daría error.
 					end if;
 				when cerrar => --cerrando puertas
