@@ -20,57 +20,149 @@ end Display7seg;
 architecture Behavioral of Display7seg is
 
 signal num_led : std_logic_vector (6 downto 0);
-signal letras_led : std_logic_vector (6 downto 0);
-shared variable flag : std_logic_vector := '0';    --identifica donde nos encontramos, si escribiendo S, B o P ó 1, 2, 3, 4. 
---Valor inicial de 0. Si flag = 0, identificamos motores (movimiento). Si está a 1, identificamos valores de piso
+shared variable flag : std_logic_vector (2 downto 0);   
 
 begin 
 
-    display: process (reset, clk)
+    display_piso: process (reset, clk)
     begin
         if reset = '1' then
-            num_led <= "0000000";   --Se encenderá todo, para darle un toque retro al reset
-            letras_led <= "0000000";
-            flag := '0';
-            led <= "0000000";
-            --dig-ctrl <= "0000";
+            num_led <= "1111111";   --Se encenderá todo, para darle un toque retro al reset
+            letras_led <= "1111111";
+            flag := "000";
+            led <= "1111111";
+            control <= "1111";
         elsif rising_edge (clk) then --Le pondremos una frecuencia de reloj acorde
-            if flag = '0' then
-                case (code) is 
-                    when "0000" =>
-                        num_led <= "0000001";   --numero 0
-                    when "0001" => 
+            if flag = "000" then
+                control <= "11111110";
+                case (destino) is 
+                    when "001" => 
                         num_led <= "1001111";   --numero 1
-                    when "0010" =>
+                    when "010" =>
                         num_led <= "0010010";   --numero 2
-                    when "0011" =>
+                    when "011" =>
                         num_led <= "0000110";   --numero 3
+                    when "100" =>
+                        num_led <= "1001100";   --numero 4
+                    when "101" =>
+                        num_led <= "0100100";   --numero 5
+                    when "110" =>
+                        num_led <= "0100000";   --numero 6
+                    when "111" =>
+                        num_led <= "0001111";   --numero 7
                     when others => 
-                        num_led <= "1001001";   --dos barras verticales como un pausa ||
+                        num_led <= "1111110";   --rallita de espera snif
                 end case;
                 
-                flag := '1';
-                --dig-ctrl <= "1110" ;  --No se exactamente qué significa esto
-                led <= num_led;
+                flag := flag + 1;
                 
-            elsif flag = '1' then 
+            elsif flag = "001" then 
+                control <= "11111101" ;
                 case (modo_motor) is
                     when "10" =>    --Ascensor Sube
-                        letras_led <= "0011100";    --Dibujo de subir. Cuadrado superior
+                        num_led <= "1111100";    --Dibujo de subir
                     when "01" =>    --Ascensor Baja
-                        letras_led <= "1100010";    --Dibujo de bajar. Cuadrado inferior
+                        num_led <= "1111010";    --Dibujo de bajar. Cuadrado inferior
                     when "00" =>    --Ascensor Parado
-                        letras_led <= "1111110";    --Dibujo de parado. Linea intermedia
+                        num_led <= "1111110";    --Dibujo de parado. Linea intermedia
                     when others => 
-                        letras_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
+                        num_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
                 end case;
                 
-                flag := '0';
-                --dig-ctrl <= "0111" ;  --No se exactamente qué significa esto
-                led <= letras_led;
+                flag := flag + 1;                
+
+            elsif flag = "010" then
+                control <= "11111011" ;
+                case (modo_motor) is
+                    when "10" =>    --Ascensor Sube
+                        num_led <= "1011110";    --Dibujo de subir
+                    when "01" =>    --Ascensor Baja
+                        num_led <= "1101110";    --Dibujo de bajar. Cuadrado inferior
+                    when "00" =>    --Ascensor Parado
+                        num_led <= "1111110";    --Dibujo de parado. Linea intermedia
+                    when others => 
+                        num_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
+                end case;  
+
+                flag := flag + 1;                
+
+            elsif flag = "011" then
+                control <= "11110111" ;
+                case (actual) is                
+                    when "001" => 
+                        num_led <= "1001111";   --numero 1
+                    when "010" =>
+                        num_led <= "0010010";   --numero 2
+                    when "011" =>
+                        num_led <= "0000110";   --numero 3
+                    when "100" =>
+                        num_led <= "1001100";   --numero 4
+                    when "101" =>
+                        num_led <= "0100100";   --numero 5
+                    when "110" =>
+                        num_led <= "0100000";   --numero 6
+                    when "111" =>
+                        num_led <= "0001111";   --numero 7
+                    when others => 
+                        num_led <= "1111110";   --rallita de espera snif
+                end case;
+                
+                flag := flag + 1;                
+
+            elsif flag = "100" then
+                control <= "11101111" ;
+                case (modo_puerta) is
+                    when "10" =>   
+                        num_led <= "1001001";   
+                    when others => 
+                        num_led <= "1001111";    
+                end case;  
+
+                flag := fag + 1;       
+
+            elsif flag = "101" then
+                control <= "11011111" ;
+                case (modo_puerta) is
+                    when "01" =>   
+                        num_led <= "1001111";    
+                    when "00" => 
+                        num_led <= "1111001";    
+                    when others => 
+                        num_led <= "1111111";   
+                end case;  
+
+                flag := fag + 1;          
+
+            elsif flag = "110" then
+                control <= "10111111" ;
+                case (modo_puerta) is
+                    when "01" =>   
+                        num_led <= "1111001";    
+                    when "00" => 
+                        num_led <= "1001111";    
+                    when others => 
+                        num_led <= "1111111";   
+                end case;  
+
+                flag := fag + 1;  
+
+            elsif flag = "111" then
+                control <= "01111111" ;
+                case (modo_puerta) is
+                    when "01" =>   
+                        num_led <= "1001001";   
+                    when others => 
+                        num_led <= "1111001";   
+                end case;  
+
+                flag := fag + 1;  
+
             end if;
         end if;
+
     end process;
+
+    led <= num_led;
     
-    end architecture Behavioral;
+end architecture Behavioral;
        
