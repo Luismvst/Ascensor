@@ -1,6 +1,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.std_logic_arith.ALL;
+use ieee.std_logic_unsigned.ALL;
 
 entity Display7seg is
     Port ( 
@@ -28,7 +30,7 @@ begin
     begin
         if reset = '1' then
             num_led <= "1111111";   --Se encenderá todo, para darle un toque retro al reset
-            letras_led <= "1111111";
+            num_led <= "1111111";
             flag := "000";
             led <= "1111111";
             control <= "1111";
@@ -118,7 +120,7 @@ begin
                         num_led <= "1001111";    
                 end case;  
 
-                flag := fag + 1;       
+                flag := flag + 1;       
 
             elsif flag = "101" then
                 control <= "11011111" ;
@@ -131,7 +133,7 @@ begin
                         num_led <= "1111111";   
                 end case;  
 
-                flag := fag + 1;          
+                flag := flag + 1;          
 
             elsif flag = "110" then
                 control <= "10111111" ;
@@ -144,7 +146,7 @@ begin
                         num_led <= "1111111";   
                 end case;  
 
-                flag := fag + 1;  
+                flag := flag + 1;  
 
             elsif flag = "111" then
                 control <= "01111111" ;
@@ -155,7 +157,7 @@ begin
                         num_led <= "1111001";   
                 end case;  
 
-                flag := fag + 1;  
+                flag := flag + 1;  
 
             end if;
         end if;

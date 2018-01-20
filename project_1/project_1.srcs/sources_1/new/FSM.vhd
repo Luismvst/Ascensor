@@ -4,18 +4,14 @@ library IEEE;
     use ieee.std_logic_arith.ALL;
     use ieee.std_logic_unsigned.ALL;
     
-    --Fsm Es el encargado de tomar las decisiones que van a ir a prácticamente el resto de los módulos que componen el ascensor
-    --Reaccionarán tal y como FSM les indica.
-    --Se traslada el Ascensor que programamos originalmente a este submódulo creado para encapsular la toma de responsabilidades un nivel más
 
 entity FSM is
 PORT (
 	clk, reset : in std_logic; 
-	--puerta: in std_logic; 	--Puerta abierta o puerta cerrada
 	f_carrera_puerta : in std_logic_vector (1 downto 0); -- 01 cerrado, 10 abierto 
 	boton_stop : in std_logic;
 	sensor_apertura : in std_logic;	--Nos indica que se encuentra en un piso adecuado para parar ( nosotros lo paramos como sensor externo)
-	senor_presencia : in std_logic;
+	sensor_presencia : in std_logic;
 	boton: in std_logic_vector (2 downto 0);
 	piso : in std_logic_vector (2 downto 0);
 	--El boton tiene un estado de reposo que es el 000 (no hay nada pulsandolo)
@@ -46,7 +42,7 @@ architecture Behavioral of FSM is
 						presente <= cerrar;
 					end if;
 				when cerrar => --cerrando puertas
-					if rising_edge (sensor_presencia) then
+					if sensor_presencia = '1' then
 						presente <= abrir;
 					elsif f_carrera_puerta = "01" then 
 						presente <= marcha; 	--Se puede emprender el movimiento
@@ -76,7 +72,7 @@ architecture Behavioral of FSM is
 
 			when inicio => --Cuando iniciamos el ascensor por primera vez				
 				accion_motor_puerta <= "00";	--Puerta cerrada
-				if f_carrera_puerta /= "01"
+				if f_carrera_puerta /= "01" then
 					accion_motor_puerta <= "01";
 				elsif piso /= "001" and f_carrera_puerta = "01" then 		--Piso supuesto inicial
 					accion_motor <= "01";	--Bajamos al piso inicial

@@ -11,21 +11,23 @@ Port (
 end Decod_Piso;
 
 architecture Behavioral of Decod_Piso is
-Decoder_piso : process (clk)
-begin 
-	if rising_edge (clk) then
-		case entrada is
-			when "0000000" => salida <= "000"; 
-			when "0000001" => salida <= "001"; 
-			when "0000010" => salida <= "010"; 
-			when "0000100" => salida <= "011"; 
-			when "0001000" => salida <= "100";
-			when "0010000" => salida <= "101";
-			when "0100000" => salida <= "110";   
-			when "1000000" => salida <= "111";
-		end case;
-	end if;
-end process;
+
+begin
+    Decoder_piso : process (clk)
+    begin 
+        if rising_edge (clk) then
+            case entrada is
+                when "0000000" => salida <= "000"; 
+                when "0000001" => salida <= "001"; 
+                when "0000010" => salida <= "010"; 
+                when "0000100" => salida <= "011"; 
+                when "0001000" => salida <= "100";
+                when "0010000" => salida <= "101";
+                when "0100000" => salida <= "110";   
+                when "1000000" => salida <= "111";
+            end case;
+        end if;
+    end process;
 	
 
 
