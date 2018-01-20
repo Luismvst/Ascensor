@@ -22,7 +22,7 @@ entity Top is
          --Sensor que verifica su estado para realizar la operación de abrir puertas tras haber realizado el movimiento. Para no hacer fugaz la etapa.
         sensor_piso : in std_logic; 
         
-        boton_pulsado: in std_logic_vector (3 downto 0);     	--Boton presionado en la FPGA  
+        boton: in std_logic_vector (3 downto 0);     	--Boton presionado en la FPGA  
         puerta_sensor  : in std_logic;                                --Nos muestra la puerta abierta o cerrada
         puerta_abierta : in std_logic;                         --para no realizar etapas fugaces, el sensor que verifica que la puerta se ha abierto.
         puerta_cerrada : in std_logic;                         --Lo mismo que abriendo puerta pero al contrario                   
@@ -37,7 +37,7 @@ architecture Structural of Top is
     
     --Tipos de relojes
     signal 60Hz: std_logic;
-    signal clk_ascensor: std_logic;
+    signal 1Hz: std_logic;
     
     --Decoder
     signal modo : std_logic_vector (1 downto 0);
@@ -80,7 +80,7 @@ architecture Structural of Top is
         accion_motor   : out std_logic_vector (1 downto 0);
         accion_motor_puerta    : out std_logic_vector (1 downto 0);
         sensor_piso : in std_logic;
-        boton_pulsado : out std_logic_vector (2 downto 0)
+        destino : out std_logic_vector (2 downto 0)
        );
     END COMPONENT;
     
@@ -109,7 +109,7 @@ begin
     GENERIC MAP ( frec => 50000000 )
     PORT MAP (
         clk => clk,
-        clk_out => clk_ascensor,     
+        clk_out => 1Hz,     
         reset => reset
         );
         
@@ -136,9 +136,9 @@ begin
         reset => reset,
         boton => boton,
         piso => code,		--El piso es el code que entra en el decoder
-        clk => clk_ascensor,
+        clk => 1Hz,
         sensor_piso => sensor_piso,
-        boton_pulsado => boton_pulsado,
+        destino => destino,
         puerta_abierta => puerta_abierta,
         puerta_cerrada => puerta_cerrada,
         accion_motor => s_motor,
@@ -147,7 +147,7 @@ begin
         
     Inst_Motor_Puerta:  Motor_Puerta
     PORT MAP ( 
-        clk => clk,
+        clk => 1Hz,
         reset => reset,
         accion_motor_puerta => s_motor_puerta,
         motor_puerta_abrir => motor_puerta_abrir,
@@ -156,7 +156,7 @@ begin
         
     Inst_Motor_Ascensor : Motor_Ascensor
     PORT MAP (
-        clk=> clk,
+        clk=> 1Hz,
         reset => reset,
         accion_motor => s_motor,
         motor_subir => motor_subir,

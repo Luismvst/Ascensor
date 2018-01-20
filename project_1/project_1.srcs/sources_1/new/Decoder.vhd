@@ -2,22 +2,26 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity Decoder is
+entity Display7seg is
     Port ( 
         reset : in std_logic;
         clk : in std_logic;
-        code : IN STD_LOGIC_VECTOR (3 downto 0);    --Codifica nuestro piso actual
-        led : OUT STD_LOGIC_VECTOR (6 downto 0);          
-        modo : in std_logic_vector (1 downto 0)   --El modo es si subimos, bajamos o nos paramos   
+        destino : IN STD_LOGIC_VECTOR (2 downto 0);    
+        actual : in std_logic_vector (2 downto 0);
+        led : OUT STD_LOGIC_VECTOR (6 downto 0);
+        control : out std_logic_vector (7 downto 0);          
+        modo_motor: in std_logic_vector (1 downto 0);   --El modo_motor es si subimos, bajamos o nos paramos   
+        modo_puerta : in std_logic_vector (1 downto 0)
+        --puntiquitillitos puntitos
         
     );
-end Decoder;
+end Display7seg;
 
-architecture Behavioral of Decoder is
+architecture Behavioral of Display7seg is
 
 signal num_led : std_logic_vector (6 downto 0);
 signal letras_led : std_logic_vector (6 downto 0);
-shared variable flag : std_logic := '0';    --identifica donde nos encontramos, si escribiendo S, B o P ó 1, 2, 3, 4. 
+shared variable flag : std_logic_vector := '0';    --identifica donde nos encontramos, si escribiendo S, B o P ó 1, 2, 3, 4. 
 --Valor inicial de 0. Si flag = 0, identificamos motores (movimiento). Si está a 1, identificamos valores de piso
 
 begin 
@@ -32,7 +36,7 @@ begin
             --dig-ctrl <= "0000";
         elsif rising_edge (clk) then --Le pondremos una frecuencia de reloj acorde
             if flag = '0' then
-                case (code) is --leemos la entrada para saber qué nos están mandando dibujar en el display
+                case (code) is 
                     when "0000" =>
                         num_led <= "0000001";   --numero 0
                     when "0001" => 
@@ -50,7 +54,7 @@ begin
                 led <= num_led;
                 
             elsif flag = '1' then 
-                case (modo) is
+                case (modo_motor) is
                     when "10" =>    --Ascensor Sube
                         letras_led <= "0011100";    --Dibujo de subir. Cuadrado superior
                     when "01" =>    --Ascensor Baja

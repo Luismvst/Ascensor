@@ -12,15 +12,14 @@ entity FSM is
 PORT (
 	clk, reset : in std_logic; 
 	--puerta: in std_logic; 	--Puerta abierta o puerta cerrada
-	abriendo_puerta : in std_logic;
-	cerrando_puerta : in std_logic;
-	sensor_piso : in std_logic;	--Nos indica que se encuentra en un piso adecuado para parar ( nosotros lo paramos como sensor externo)
+	f.carrera_puerta : in std_logic_vector (1 downto 0);
+	sensor_apertura : in std_logic;	--Nos indica que se encuentra en un piso adecuado para parar ( nosotros lo paramos como sensor externo)
 	boton: in std_logic_vector (2 downto 0);
 	piso : in std_logic_vector (2 downto 0);
 	--El boton tiene un estado de reposo que es el 000 (no hay nada pulsandolo)
-	boton_pulsado : out std_logic_vector (2 downto 0);
+	destino : out std_logic_vector (2 downto 0);
 	accion_motor: out std_logic_vector (1 downto 0);
-	accion_motor_puerta: out std_logic
+	accion_motor_puerta: out std_logic_vector (1 downto 0)
 	);
 end FSM;
 
