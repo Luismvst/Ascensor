@@ -96,6 +96,7 @@ architecture Structural of Top is
         sentido : in std_logic_vector (1 downto 0);
         estado_sim : out std_logic_vector (1 downto 0);
         clk : in std_logic;
+        reset : in std_logic;
         f_carrera : in std_logic_vector (1 downto 0)
         );
     END COMPONENT;
@@ -103,7 +104,8 @@ architecture Structural of Top is
     COMPONENT Sim_Piso 
     PORT (
         sentido : in std_logic_vector (1 downto 0);
-        clk : in std_logic;
+        clk : in std_logic;        
+        reset : in std_logic;
         piso : out std_logic_vector (6 downto 0)
         );
     END COMPONENT;
