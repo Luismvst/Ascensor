@@ -1,3 +1,5 @@
+Top.vhd
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -8,6 +10,8 @@ entity Top is
     Port ( 
         --Para el Decoder
         segment : out std_logic_vector ( 6 downto 0 );  --La salida de los leds
+        ctrl : out std_logic_vector (4 downto 0);
+
        
        --Reloj y reset general
         reset     : in std_logic;  
@@ -15,30 +19,29 @@ entity Top is
         
         --Para el Ascensor
         
-         --Sensor que verifica su estado para realizar la operación de abrir puertas tras haber realizado el movimiento. Para no hacer fugaz la etapa.
+         --Sensor que verifica su estado para realizar la operaciÃ³n de abrir puertas tras haber realizado el movimiento. Para no hacer fugaz la etapa.
         sensor_piso : in std_logic; 
         
-        boton_pulsado  : in std_logic_vector (3 downto 0);     --Boton presionado en la FPGA  
-        puerta  : out std_logic;                                --Nos muestra la puerta abierta o cerrada
+        boton_pulsado: in std_logic_vector (3 downto 0);     	--Boton presionado en la FPGA  
+        puerta_sensor  : in std_logic;                                --Nos muestra la puerta abierta o cerrada
         puerta_abierta : in std_logic;                         --para no realizar etapas fugaces, el sensor que verifica que la puerta se ha abierto.
-        puerta_cerrada : in std_logic;                          --Lo mismo que abriendo puerta pero al contrario                   
+        puerta_cerrada : in std_logic;                         --Lo mismo que abriendo puerta pero al contrario                   
         motor_subir   : out std_logic;                          --Motor sube
         motor_bajar : out std_logic;                            --Motor baja
         motor_puerta_abrir: out std_logic;                    --Motor puerta ( 1 cierra,  0 abre )
-        motor_puerta_cerrar: out std_logic                    --Motor puerta ( 1 cierra,  0 abre )
-        
+        motor_puerta_cerrar: out std_logic
     );
 end Top;
 
-architecture Behavioral of Top is
+architecture Structural of Top is
     
     --Tipos de relojes
-    signal clk_display: std_logic;
+    signal 60Hz: std_logic;
     signal clk_ascensor: std_logic;
     
     --Decoder
     signal modo : std_logic_vector (1 downto 0);
-    signal code : std_logic_vector (3 downto 0);
+    signal code : std_logic_vector (1 downto 0);
     
     --Ascensor
     signal piso_actual : std_logic_vector (2 downto 0);
@@ -53,7 +56,7 @@ architecture Behavioral of Top is
         reset   : in std_logic;
         code    : in std_logic_vector ( 3 downto 0);
         led     : out std_logic_vector ( 6 downto 0 );
-        modo    : in std_logic_vector (1 downto 0)
+        modo 	: in std_logic_vector (1 downto 0)
         );
     END COMPONENT;        
     
@@ -70,8 +73,8 @@ architecture Behavioral of Top is
     PORT (
         boton   : in std_logic_vector (2 downto 0);
         piso    : in std_logic_vector (2 downto 0);
-        abriendo_puerta  : in std_logic; 
-        cerrando_puerta : in std_logic;
+        puerta_abierta  : in std_logic; 
+        puerta_cerrada : in std_logic;
         clk     : in std_logic;
         reset   : in std_logic;
         accion_motor   : out std_logic_vector (1 downto 0);
@@ -114,13 +117,13 @@ begin
     GENERIC MAP ( frec => 50000000 )
     PORT MAP (
         clk => clk,
-        clk_out => clk_display,     
+        clk_out => 60Hz,     
         reset => reset
         );
                 
     Inst_Decoder:   Decoder 
     PORT MAP (
-        clk => clk_display,
+        clk => 60Hz,
         code => code,
         led => segment,
         reset => reset, 
@@ -129,13 +132,15 @@ begin
                 
     Inst_FSM:     FSM
     PORT MAP (
+
         reset => reset,
         boton => boton,
-        piso => piso,
+        piso => code,		--El piso es el code que entra en el decoder
         clk => clk_ascensor,
         sensor_piso => sensor_piso,
-        abriendo_puerta => abriendo_puerta,
-        cerrando_puerta => cerrando_puerta,
+        boton_pulsado => boton_pulsado,
+        puerta_abierta => puerta_abierta,
+        puerta_cerrada => puerta_cerrada,
         accion_motor => s_motor,
         accion_motor_puerta => s_motor_puerta
         );
@@ -145,7 +150,8 @@ begin
         clk => clk,
         reset => reset,
         accion_motor_puerta => s_motor_puerta,
-        motor_puerta => motor_puerta_ascensor
+        motor_puerta_abrir => motor_puerta_abrir,
+        motor_puerta_cerrar => motor_puerta_cerrar
         );
         
     Inst_Motor_Ascensor : Motor_Ascensor
@@ -158,4 +164,4 @@ begin
         );            
 
   
-end Behavioral;
+end Structural;
