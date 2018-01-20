@@ -30,7 +30,6 @@ begin
     begin
         if reset = '1' then
             num_led <= "1111111";   --Se encenderá todo, para darle un toque retro al reset
-            num_led <= "1111111";
             flag := "000";
             led <= "1111111";
             control <= "1111";

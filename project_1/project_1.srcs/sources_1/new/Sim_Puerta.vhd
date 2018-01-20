@@ -23,17 +23,19 @@ begin
 	begin
 		if reset = '1' then
 			estado <= "11";
+			f_carrera <= "00";
 		elsif rising_edge (clk) then
 			if sentido = "01" then
 				estado <= estado - 1;
-				if estado = "00" then
-					f_carrera <= "01";
-				end if;
 			elsif sentido <= "10" then
 				estado <= estado + 1;
-				if estado = "11" then
-					f_carrera <= "10";
-				end if;
+			end if;
+            if estado = "11" then
+                f_carrera <= "10";
+           elsif estado = "00" then
+                f_carrera <= "01";
+           else 
+                f_carrera <= "00";
 			end if;
 		end if;
 	end process;
