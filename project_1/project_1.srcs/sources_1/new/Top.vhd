@@ -66,6 +66,7 @@ architecture Structural of Top is
         clk, reset : in std_logic; 
         f_carrera_puerta : in std_logic_vector (1 downto 0);
         sensor_apertura : in std_logic; 
+        sensor_presencia : in std_logic;
         boton: in std_logic_vector (2 downto 0);
         piso : in std_logic_vector (2 downto 0);
         destino : out std_logic_vector (2 downto 0);
@@ -78,7 +79,6 @@ architecture Structural of Top is
     PORT (
         clk, reset : in std_logic;
         accion_motor_puerta: in std_logic_vector (1 downto 0);
-        sensor_presencia : in std_logic;
         motor_puerta: out std_logic_vector (1 downto 0)
         );
     END COMPONENT;
@@ -153,6 +153,7 @@ begin
         f_carrera_puerta => f_carrera_puerta,
         piso => piso_actual,
         sensor_apertura => sensor_apertura,
+        sensor_presencia => sensor_presencia,
         boton_stop => boton_stop,
         accion_motor => motor_fsm,
         accion_motor_puerta => puerta_fsm
