@@ -8,6 +8,7 @@ entity Top is
     Port ( 
        sensor_presencia : in std_logic;             --Célula de la puerta que detecta la presencia en el arco de la puerta. 
        sensor_apertura : in std_logic;              --Detecta que la puerta está alineada con el suelo para poder abrirse.
+       boton_stop : in std_logic;        
        boton : in std_logic_vector (6 downto 0);    --detecta el botón pulsado por el            
 
        segment : out std_logic_vector (6 downto 0);
@@ -152,6 +153,7 @@ begin
         f_carrera_puerta => f_carrera_puerta,
         piso => piso_actual,
         sensor_apertura => sensor_apertura,
+        boton_stop => boton_stop,
         accion_motor => motor_fsm,
         accion_motor_puerta => puerta_fsm
         );
