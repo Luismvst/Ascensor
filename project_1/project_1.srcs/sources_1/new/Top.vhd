@@ -10,18 +10,19 @@ entity Top is
        sensor_apertura : in std_logic;              --Detecta que la puerta está alineada con el suelo para poder abrirse.
        boton_stop : in std_logic;        
        boton : in std_logic_vector (6 downto 0);    --detecta el botón pulsado por el            
-
+       reset : in std_logic;
        segment : out std_logic_vector (6 downto 0);
        --puntitos_puerta : out std_logic_vector (1 downto 0);
-       ctrl : out std_logic_vector (7 downto 0)
+       ctrl : out std_logic_vector (7 downto 0);
+       clk : in std_logic
     );
 end Top;
 
 architecture Structural of Top is
     
     --Tipos de relojes
-    signal 60Hz: std_logic;
-    signal 1Hz: std_logic; 
+    signal Hz60: std_logic;
+    signal Hz1: std_logic; 
     
     --FSM
     signal f_carrera_puerta : std_logic_vector (1 downto 0);
@@ -68,6 +69,7 @@ architecture Structural of Top is
         sensor_apertura : in std_logic; 
         sensor_presencia : in std_logic;
         boton: in std_logic_vector (2 downto 0);
+        boton_stop : in std_logic;
         piso : in std_logic_vector (2 downto 0);
         destino : out std_logic_vector (2 downto 0);
         accion_motor: out std_logic_vector (1 downto 0);
@@ -112,8 +114,8 @@ architecture Structural of Top is
 
     COMPONENT Decod_Piso
     PORT (
-        boton: in std_logic_vector (6 downto 0);
-        boton_decod : out std_logic_vector (2 downto 0);
+        entrada: in std_logic_vector (6 downto 0);
+        salida : out std_logic_vector (2 downto 0);
         clk : in std_logic
         );
     END COMPONENT;
@@ -123,21 +125,21 @@ begin
     GENERIC MAP ( frec => 50000000 )
     PORT MAP (
         clk => clk,
-        clk_out => 1Hz,     
+        clk_out => Hz1,     
         reset => reset
         );
         
     Inst_Clock_Divider_Display:     Clock_Divider
-    GENERIC MAP ( frec => 3000000000 )
+    GENERIC MAP ( frec => 300000000 )
     PORT MAP (
         clk => clk,
-        clk_out => 60Hz,     
+        clk_out => Hz60,     
         reset => reset
         );
                 
     Inst_Decoder:   Display7seg 
     PORT MAP (
-        clk => 60Hz,
+        clk => Hz60,
         reset => reset,
         destino => destino_fsm,
         actual => piso_actual,
@@ -149,7 +151,7 @@ begin
                 
     Inst_FSM:     FSM
     PORT MAP (
-        clk => 1Hz,
+        clk => Hz1,
         reset => reset,
         boton => boton_decod,
         f_carrera_puerta => f_carrera_puerta,
@@ -163,7 +165,7 @@ begin
         
     Inst_Motor_Puerta:  Control_Motor_Puerta
     PORT MAP ( 
-        clk => 60Hz,
+        clk => Hz60,
         reset => reset,
         accion_motor_puerta => puerta_fsm,
         motor_puerta => motor_puerta
@@ -171,37 +173,39 @@ begin
         
     Inst_Motor_Ascensor : Control_Motor_Ascensor
     PORT MAP (
-        clk=> 60Hz,
+        clk=> Hz60,
         reset => reset,
         accion_motor => motor_fsm,
-        motor => motor
+        motor => motor_ascensor
         );            
 
     Inst_Sim_Piso : Sim_Piso
     PORT MAP (
-        clk => 1Hz,
+        clk => Hz1,
+        reset => reset,
         sentido => motor_ascensor,
         piso => piso_sim
         );
 
     Inst_Sim_Puerta : Sim_Puerta 
     PORT MAP (
-        clk => 1Hz,
+        clk => Hz1,
+        reset => reset,
         sentido => motor_puerta,
         estado_sim => puerta_sim,
-        f.carrera => f.carrera_puerta
+        f_carrera => f_carrera_puerta
         );
 
     Inst_Decod_Boton : Decod_Piso
     PORT MAP (
         entrada => boton,
-        clk => 60Hz,
+        clk => Hz60,
         salida => boton_decod
         );
 
     Inst_Decod_Piso : Decod_Piso
     PORT MAP (
-        clk => 60Hz,
+        clk => Hz60,
         entrada => piso_sim,
         salida => piso_actual
         );

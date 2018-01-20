@@ -1,6 +1,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.std_logic_arith.ALL;
+use ieee.std_logic_unsigned.ALL;
 
 entity Control_Motor_Puerta is
 	PORT (
@@ -13,7 +15,7 @@ end Control_Motor_Puerta;
 architecture Behavioral of Control_Motor_Puerta is
 
 begin
-	motor_puerta : process (clk)
+	puerta_process : process (clk)
 	begin
 		if rising_edge (clk) then
 			if accion_motor_puerta ="10" then	--Abrir
