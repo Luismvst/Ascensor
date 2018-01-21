@@ -29,7 +29,7 @@ architecture Behavioral of FSM is
 	begin
 	MaquinaEstados : process (reset, clk)	--FSM
 		begin
-		if reset = '1' then presente <= inicio;
+		if reset = '0' then presente <= inicio;
 		elsif rising_edge (clk) then
 			case presente is
 				when inicio => --Por si al empezar tenemos que ajustar el ascensor

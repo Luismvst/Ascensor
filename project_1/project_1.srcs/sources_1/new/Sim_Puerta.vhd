@@ -7,10 +7,12 @@ use ieee.std_logic_unsigned.ALL;
 entity Sim_Puerta is
 port (
 	sentido : in std_logic_vector (1 downto 0);
-	estado_sim : out std_logic_vector (1 downto 0);		--Estados de la puerta segun display. "11" Abierto total.
+	estado_sim : out std_logic_vector (1 downto 0);		
+	--Estados de la puerta segun display. "11" Abierto total.
 	clk : in std_logic;
 	reset : in std_logic;
-	f_carrera : out std_logic_vector (1 downto 0)		--Sensores que indican apertura o cierre completos.
+	f_carrera : out std_logic_vector (1 downto 0)		
+	--Sensores que indican apertura o cierre completos.
 	);
 end;
 
@@ -21,7 +23,7 @@ signal estado : std_logic_vector (1 downto 0):="01";
 begin
 	Sim_puerta : process (clk, reset)
 	begin
-		if reset = '1' then
+		if reset = '0' then
 			estado <= "11";
 			f_carrera <= "00";
 		elsif rising_edge (clk) then
