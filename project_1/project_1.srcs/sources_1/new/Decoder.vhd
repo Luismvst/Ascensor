@@ -11,7 +11,7 @@ entity Display7seg is
         destino : IN STD_LOGIC_VECTOR (2 downto 0);    
         actual : in std_logic_vector (2 downto 0);
         led : OUT STD_LOGIC_VECTOR (6 downto 0);
-        control : out std_logic_vector (7 downto 0);          
+        ctrl : out std_logic_vector (7 downto 0);          
         modo_motor: in std_logic_vector (1 downto 0);   --El modo_motor es si subimos, bajamos o nos paramos   
         modo_puerta : in std_logic_vector (1 downto 0)
         --puntiquitillitos puntitos
@@ -21,9 +21,9 @@ end Display7seg;
 
 architecture Behavioral of Display7seg is
 
-signal num_led : std_logic_vector (6 downto 0);
+signal num_led : std_logic_vector (6 downto 0):="1111111";
 shared variable flag : std_logic_vector (2 downto 0);   
-
+signal control : std_logic_vector (7 downto 0):="11111111";
 begin 
 
     display_piso: process (reset, clk)
@@ -31,8 +31,7 @@ begin
         if reset = '1' then
             num_led <= "1111111";   --Se encenderá todo, para darle un toque retro al reset
             flag := "000";
-            led <= "1111111";
-            control <= "1111";
+            control <= "11111111";
         elsif rising_edge (clk) then --Le pondremos una frecuencia de reloj acorde
             if flag = "000" then
                 control <= "11111110";
@@ -164,6 +163,7 @@ begin
     end process;
 
     led <= num_led;
+    ctrl <= control;
     
 end architecture Behavioral;
        

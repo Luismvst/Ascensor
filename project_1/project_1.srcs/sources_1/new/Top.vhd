@@ -25,7 +25,7 @@ architecture Structural of Top is
     signal Hz1: std_logic; 
     
     --FSM
-    signal f_carrera_puerta : std_logic_vector (1 downto 0);
+    signal f_carrera_sim : std_logic_vector (1 downto 0);
     signal piso_actual : std_logic_vector (2 downto 0);
     signal boton_decod : std_logic_vector (2 downto 0);
     signal puerta_fsm : std_logic_vector (1 downto 0);  --Fsm manda accion sobre los motores de la puerta.
@@ -38,7 +38,7 @@ architecture Structural of Top is
     signal motor_ascensor: std_logic_vector (1 downto 0);
     --Outputs
     signal puerta_sim : std_logic_vector (1 downto 0);
-    signal piso_sim : std_logic_vector (1 downto 0);
+    signal piso_sim : std_logic_vector (6 downto 0);
           
     COMPONENT Display7seg
     PORT (
@@ -47,7 +47,7 @@ architecture Structural of Top is
         destino : IN STD_LOGIC_VECTOR (2 downto 0);    
         actual : in std_logic_vector (2 downto 0);
         led : OUT STD_LOGIC_VECTOR (6 downto 0);
-        control : out std_logic_vector (7 downto 0);          
+        ctrl : out std_logic_vector (7 downto 0);          
         modo_motor: in std_logic_vector (1 downto 0);  
         modo_puerta : in std_logic_vector (1 downto 0)
         );
@@ -79,7 +79,7 @@ architecture Structural of Top is
     
     COMPONENT Control_Motor_Puerta
     PORT (
-        clk, reset : in std_logic;
+        clk : in std_logic;
         accion_motor_puerta: in std_logic_vector (1 downto 0);
         motor_puerta: out std_logic_vector (1 downto 0)
         );
@@ -89,7 +89,7 @@ architecture Structural of Top is
     PORT (
         clk, reset : in std_logic;
         accion_motor : in std_logic_vector (1 downto 0);
-        motor : out std_logic_vector (2 downto 0)
+        motor : out std_logic_vector (1 downto 0)
         );
     END COMPONENT;
 
@@ -99,7 +99,7 @@ architecture Structural of Top is
         estado_sim : out std_logic_vector (1 downto 0);
         clk : in std_logic;
         reset : in std_logic;
-        f_carrera : in std_logic_vector (1 downto 0)
+        f_carrera : out std_logic_vector (1 downto 0)
         );
     END COMPONENT;
 
@@ -144,7 +144,7 @@ begin
         destino => destino_fsm,
         actual => piso_actual,
         led => segment,
-        control => ctrl,
+        ctrl => ctrl,
         modo_puerta => puerta_sim,
         modo_motor => motor_ascensor
         );                       
@@ -154,7 +154,7 @@ begin
         clk => Hz1,
         reset => reset,
         boton => boton_decod,
-        f_carrera_puerta => f_carrera_puerta,
+        f_carrera_puerta => f_carrera_sim,
         piso => piso_actual,
         sensor_apertura => sensor_apertura,
         sensor_presencia => sensor_presencia,
@@ -166,7 +166,6 @@ begin
     Inst_Motor_Puerta:  Control_Motor_Puerta
     PORT MAP ( 
         clk => Hz60,
-        reset => reset,
         accion_motor_puerta => puerta_fsm,
         motor_puerta => motor_puerta
         );
@@ -193,7 +192,7 @@ begin
         reset => reset,
         sentido => motor_puerta,
         estado_sim => puerta_sim,
-        f_carrera => f_carrera_puerta
+        f_carrera => f_carrera_sim
         );
 
     Inst_Decod_Boton : Decod_Piso
