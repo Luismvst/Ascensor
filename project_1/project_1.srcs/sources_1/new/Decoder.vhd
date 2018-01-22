@@ -11,7 +11,7 @@ entity Display7seg is
         destino : IN STD_LOGIC_VECTOR (2 downto 0);    
         actual : in std_logic_vector (2 downto 0);
         led : OUT STD_LOGIC_VECTOR (6 downto 0);
-        control : out std_logic_vector (7 downto 0);          
+        ctrl : out std_logic_vector (7 downto 0);          
         modo_motor: in std_logic_vector (1 downto 0);   --El modo_motor es si subimos, bajamos o nos paramos   
         modo_puerta : in std_logic_vector (1 downto 0)
         --puntiquitillitos puntitos
@@ -21,18 +21,17 @@ end Display7seg;
 
 architecture Behavioral of Display7seg is
 
-signal num_led : std_logic_vector (6 downto 0);
-shared variable flag : std_logic_vector (2 downto 0);   
-
+signal num_led : std_logic_vector (6 downto 0):="1111111";
+signal flag : std_logic_vector (2 downto 0);   
+signal control : std_logic_vector (7 downto 0):="11111111";
 begin 
 
     display_piso: process (reset, clk)
     begin
         if reset = '1' then
-            num_led <= "1111111";   --Se encenderá todo, para darle un toque retro al reset
-            flag := "000";
-            led <= "1111111";
-            control <= "1111";
+            num_led <= "0000000";   --Se encenderá todo, para darle un toque retro al reset
+            flag <= "000";
+            control <= "00000000";
         elsif rising_edge (clk) then --Le pondremos una frecuencia de reloj acorde
             if flag = "000" then
                 control <= "11111110";
@@ -55,7 +54,7 @@ begin
                         num_led <= "1111110";   --rallita de espera snif
                 end case;
                 
-                flag := flag + 1;
+                flag <= flag + 1;
                 
             elsif flag = "001" then 
                 control <= "11111101" ;
@@ -70,7 +69,7 @@ begin
                         num_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
                 end case;
                 
-                flag := flag + 1;                
+                flag <= flag + 1;                
 
             elsif flag = "010" then
                 control <= "11111011" ;
@@ -85,7 +84,7 @@ begin
                         num_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
                 end case;  
 
-                flag := flag + 1;                
+                flag <= flag + 1;                
 
             elsif flag = "011" then
                 control <= "11110111" ;
@@ -108,7 +107,7 @@ begin
                         num_led <= "1111110";   --rallita de espera snif
                 end case;
                 
-                flag := flag + 1;                
+                flag <= flag + 1;                
 
             elsif flag = "100" then
                 control <= "11101111" ;
@@ -119,7 +118,7 @@ begin
                         num_led <= "1001111";    
                 end case;  
 
-                flag := flag + 1;       
+                flag <= flag + 1;       
 
             elsif flag = "101" then
                 control <= "11011111" ;
@@ -132,7 +131,7 @@ begin
                         num_led <= "1111111";   
                 end case;  
 
-                flag := flag + 1;          
+                flag <= flag + 1;          
 
             elsif flag = "110" then
                 control <= "10111111" ;
@@ -145,18 +144,18 @@ begin
                         num_led <= "1111111";   
                 end case;  
 
-                flag := flag + 1;  
+                flag <= flag + 1;  
 
             elsif flag = "111" then
                 control <= "01111111" ;
                 case (modo_puerta) is
-                    when "01" =>   
+                    when "10" =>   
                         num_led <= "1001001";   
                     when others => 
                         num_led <= "1111001";   
                 end case;  
 
-                flag := flag + 1;  
+                flag <= flag + 1;  
 
             end if;
         end if;
@@ -164,6 +163,7 @@ begin
     end process;
 
     led <= num_led;
+    ctrl <= control;
     
 end architecture Behavioral;
        

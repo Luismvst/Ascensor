@@ -2,22 +2,131 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Jan 19 19:43:48 2018
-# Process ID: 4356
+# Start of session at: Sun Jan 21 19:17:35 2018
+# Process ID: 4072
 # Current directory: C:/Users/Luis/Documents/GitHub/Ascensor/project_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent980 C:\Users\Luis\Documents\GitHub\Ascensor\project_1\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3304 C:\Users\Luis\Documents\GitHub\Ascensor\project_1\project_1.xpr
 # Log file: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/vivado.log
 # Journal file: C:/Users/Luis/Documents/GitHub/Ascensor/project_1\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sim_1/new/Clock_Divider_tb.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sim_1/new/Decoder_tb.vhd'.
 Scanning sources...
 Finished scanning sources
 WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.ip_user_files'.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.2/data/ip'.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 742.461 ; gain = 2.527
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:06 . Memory (MB): peak = 800.695 ; gain = 95.590
 update_compile_order -fileset sources_1
-update_files -from_files C:/Users/Luis/Documents/GitHub/Ascensor/Nexys-4-DDR-Master.xdc -to_files D:/Luis/UNIVERSIDAD/SED/Laboratorio/Nexys4DDR_Master.xdc -filesets [get_filesets *]
-INFO: [filemgmt 20-762] Replacing file 'D:/Luis/UNIVERSIDAD/SED/Laboratorio/Nexys4DDR_Master.xdc' with file 'C:/Users/Luis/Documents/GitHub/Ascensor/Nexys-4-DDR-Master.xdc'.
+set_property is_enabled false [get_files  C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sim_1/new/Decoder_tb.vhd]
+set_property is_enabled false [get_files  C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sim_1/new/Clock_Divider_tb.vhd]
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:26:24 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:26:24 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:28:34 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:28:34 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:30:32 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:30:32 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:33:43 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:33:43 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:34:27 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:34:27 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:36:58 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:36:58 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:40:27 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:40:27 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:42:35 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:42:35 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jan 21 19:45:26 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jan 21 19:47:11 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jan 21 19:48:58 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 19:50:53 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 19:50:53 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jan 21 19:59:28 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jan 21 20:21:31 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Sun Jan 21 20:23:15 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/.Xil/Vivado-4072-Luis-TOSH/dcp5/Top.xdc]
+Finished Parsing XDC File [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/.Xil/Vivado-4072-Luis-TOSH/dcp5/Top.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.173 . Memory (MB): peak = 1033.887 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 1033.887 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 1150.160 ; gain = 285.527
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Jan 21 21:06:57 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -jobs 2
+[Sun Jan 21 21:39:33 2018] Launched synth_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_1/runme.log
+[Sun Jan 21 21:39:33 2018] Launched impl_1...
+Run output will be captured here: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 21 22:28:25 2018...

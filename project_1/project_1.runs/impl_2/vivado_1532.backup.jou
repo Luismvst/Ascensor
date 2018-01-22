@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Mon Jan 22 18:40:47 2018
+# Process ID: 1532
+# Current directory: C:/Users/sed/Desktop/project_1/project_1.runs/impl_2
+# Command line: vivado.exe -log Top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Top.tcl -notrace
+# Log file: C:/Users/sed/Desktop/project_1/project_1.runs/impl_2/Top.vdi
+# Journal file: C:/Users/sed/Desktop/project_1/project_1.runs/impl_2\vivado.jou
+#-----------------------------------------------------------
+source Top.tcl -notrace

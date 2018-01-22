@@ -29,7 +29,7 @@ architecture Behavioral of FSM is
 	begin
 	MaquinaEstados : process (reset, clk)	--FSM
 		begin
-		if reset = '1' then presente <= inicio;
+		if reset = '1' then presente <= reposo;
 		elsif rising_edge (clk) then
 			case presente is
 				when inicio => --Por si al empezar tenemos que ajustar el ascensor
@@ -42,9 +42,9 @@ architecture Behavioral of FSM is
 						presente <= cerrar;
 					end if;
 				when cerrar => --cerrando puertas
-					if sensor_presencia = '1' then
-						presente <= abrir;
-					elsif f_carrera_puerta = "01" then 
+					--if sensor_presencia = '1' then
+						--presente <= abrir;
+					if f_carrera_puerta = "01" then 
 						presente <= marcha; 	--Se puede emprender el movimiento
 					end if;
 				when marcha => --Moviendose
@@ -66,15 +66,17 @@ architecture Behavioral of FSM is
 		end if;
 	end process;
 
-	MaquinaAcciones : process (presente)	--SALIDA -> Solo cuando cambia el estado (lista de sensibilidad)
+	MaquinaAcciones : process (presente, f_carrera_puerta)	--SALIDA -> Solo cuando cambia el estado (lista de sensibilidad)
 		begin					
 		case presente is
 
-			when inicio => --Cuando iniciamos el ascensor por primera vez				
-				accion_motor_puerta <= "00";	--Puerta cerrada
+			when inicio => --Cuando iniciamos el ascensor por primera vez
+				--boton_memoria := "001"	;			
+				--accion_motor_puerta <= "00";	--Puerta cerrada
 				if f_carrera_puerta /= "01" then
 					accion_motor_puerta <= "01";
-				elsif piso /= "001" and f_carrera_puerta = "01" then 		--Piso supuesto inicial
+                end if;
+				if piso /= "001" and f_carrera_puerta = "01" then 		--Piso supuesto inicial
 					accion_motor <= "01";	--Bajamos al piso inicial
 					accion_motor_puerta <= "00";
 				else 
@@ -89,7 +91,7 @@ architecture Behavioral of FSM is
 				elsif (boton_memoria < piso ) then
 					accion_motor <= "01"; 	--Bajar
 				else
-					accion_motor <= "00"; 	--Parado por seguridad... no llegaremos a este estado en principio. No estaríamos en marcha
+					accion_motor <= "00"; 	--Parado por seguridad... no llegaremos a este estado en principio. No estaríamos en marcha, a no ser que no se de al utilísimo boton de sensor_apertura.
 				end if;		
 
 			when abrir => 
