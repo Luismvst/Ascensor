@@ -1,4 +1,4 @@
-FSM-tb.vhd
+
 
 entity fsm_tb is
 end;

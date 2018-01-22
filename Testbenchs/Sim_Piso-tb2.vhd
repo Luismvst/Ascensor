@@ -1,8 +1,4 @@
-Sim_Piso-tb2.vhd
 
--- Testbench automatically generated online
--- at http://vhdl.lapinoo.net
--- Generation date : 22.1.2018 14:07:18 GMT
 
 library ieee;
 use ieee.std_logic_1164.all;

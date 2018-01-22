@@ -1,4 +1,3 @@
-Sim_Piso-tb.vhd
 
 entity Sim_Piso_tb is
 end;

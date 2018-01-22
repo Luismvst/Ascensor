@@ -1,8 +1,4 @@
-MotorAscensor-tb.vhd
 
--- Testbench automatically generated online
--- at http://vhdl.lapinoo.net
--- Generation date : 22.1.2018 14:06:16 GMT
 
 library ieee;
 use ieee.std_logic_1164.all;

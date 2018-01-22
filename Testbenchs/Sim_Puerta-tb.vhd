@@ -1,4 +1,4 @@
-Sim_Puerta-tb.vhd
+
 
 entity Sim_Puerta_tb is
 end;

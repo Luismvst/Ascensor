@@ -1,8 +1,3 @@
-FSM-tb2.vhd
-
--- Testbench automatically generated online
--- at http://vhdl.lapinoo.net
--- Generation date : 22.1.2018 10:28:15 GMT
 
 library ieee;
 use ieee.std_logic_1164.all;
