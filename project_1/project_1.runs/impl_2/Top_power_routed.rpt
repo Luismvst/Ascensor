@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Mon Jan 22 14:43:23 2018
-| Host             : Luis-TOSH running 64-bit Service Pack 1  (build 7601)
+| Date             : Mon Jan 22 20:04:18 2018
+| Host             : usuario-PC running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
 | Device           : xc7a100tcsg324-1
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.976 |
-| Dynamic (W)              | 1.885 |
-| Device Static (W)        | 0.091 |
+| Total On-Chip Power (W)  | 1.778 |
+| Dynamic (W)              | 1.688 |
+| Device Static (W)        | 0.090 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 76.0  |
-| Junction Temperature (C) | 34.0  |
+| Max Ambient (C)          | 76.9  |
+| Junction Temperature (C) | 33.1  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,16 +49,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.997 |      296 |       --- |             --- |
-|   LUT as Logic |     0.923 |      141 |     63400 |            0.22 |
-|   Register     |     0.035 |      107 |    126800 |            0.08 |
+| Slice Logic    |     0.959 |      296 |       --- |             --- |
+|   LUT as Logic |     0.885 |      135 |     63400 |            0.21 |
 |   CARRY4       |     0.034 |       16 |     15850 |            0.10 |
-|   BUFG         |     0.006 |        1 |        32 |            3.13 |
+|   Register     |     0.032 |      107 |    126800 |            0.08 |
+|   BUFG         |     0.006 |        2 |        32 |            6.25 |
+|   F7/F8 Muxes  |     0.002 |        4 |     63400 |           <0.01 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |     0.844 |      252 |       --- |             --- |
-| I/O            |     0.044 |       27 |       210 |           12.86 |
-| Static Power   |     0.091 |          |           |                 |
-| Total          |     1.976 |          |           |                 |
+| Signals        |     0.690 |      239 |       --- |             --- |
+| I/O            |     0.040 |       26 |       210 |           12.38 |
+| Static Power   |     0.090 |          |           |                 |
+| Total          |     1.778 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,7 +69,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     1.906 |       1.885 |      0.021 |
+| Vccint    |       1.000 |     1.709 |       1.688 |      0.020 |
 | Vccaux    |       1.800 |     0.019 |       0.000 |      0.019 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -135,17 +136,17 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| Top                          |     1.885 |
-|   Inst_Clock_Divider_Display |     0.508 |
-|   Inst_Clock_Divider_FSM     |     0.501 |
+| Top                          |     1.688 |
+|   Inst_Clock_Divider_Display |     0.565 |
+|   Inst_Clock_Divider_FSM     |     0.520 |
 |   Inst_Decod_Boton           |     0.025 |
-|   Inst_Decod_Piso            |     0.018 |
-|   Inst_Decoder               |     0.545 |
-|   Inst_FSM                   |     0.049 |
-|   Inst_Motor_Ascensor        |     0.000 |
-|   Inst_Motor_Puerta          |    <0.001 |
+|   Inst_Decod_Piso            |     0.044 |
+|   Inst_Decoder               |     0.334 |
+|   Inst_FSM                   |     0.069 |
+|   Inst_Motor_Ascensor        |     0.010 |
+|   Inst_Motor_Puerta          |     0.002 |
 |   Inst_Sim_Piso              |     0.000 |
-|   Inst_Sim_Puerta            |     0.114 |
+|   Inst_Sim_Puerta            |     0.009 |
 +------------------------------+-----------+
 
 

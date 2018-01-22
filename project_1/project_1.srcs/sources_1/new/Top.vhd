@@ -151,7 +151,7 @@ begin
                 
     Inst_FSM:     FSM
     PORT MAP (
-        clk => Hz1,
+        clk => Hz60,
         reset => reset,
         boton => boton_decod,
         destino => destino_fsm,

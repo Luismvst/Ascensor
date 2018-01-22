@@ -17,29 +17,34 @@ end;
 architecture Behavioral of Sim_Puerta is
 
 signal estado : std_logic_vector (1 downto 0):="01";
+signal f_carr : std_logic_vector (1 downto 0) := "00";
+
 
 begin
 	Sim_puerta : process (clk, reset)
 	begin
 		if reset = '1' then
 			estado <= "11";
-			f_carrera <= "00";
+			f_carr <= "10";
 		elsif rising_edge (clk) then
-			if sentido = "01" and sentido /= "00" then
+			if sentido = "00" then 
+			     estado <= estado;
+			elsif sentido = "01" and estado /= "00" then
 				estado <= estado - 1;
-			elsif sentido <= "10" and sentido /= "11" then
+			elsif sentido <= "10" and estado /= "11" then
 				estado <= estado + 1;
 			end if;
             if estado = "11" then
-                f_carrera <= "10";
+                f_carr <= "10";
             elsif estado = "00" then
-                f_carrera <= "01";
+                f_carr <= "01";
             else 
-                f_carrera <= "00";
+                f_carr <= "00";
 			end if;
 		end if;
 	end process;
 	
+	f_carrera <= f_carr;
 	estado_sim <= estado;
 
 end;
