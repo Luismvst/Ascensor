@@ -22,7 +22,7 @@ end Display7seg;
 architecture Behavioral of Display7seg is
 
 signal num_led : std_logic_vector (6 downto 0):="1111111";
-shared variable flag : std_logic_vector (2 downto 0);   
+signal flag : std_logic_vector (2 downto 0);   
 signal control : std_logic_vector (7 downto 0):="11111111";
 begin 
 
@@ -30,7 +30,7 @@ begin
     begin
         if reset = '1' then
             num_led <= "1111111";   --Se encenderá todo, para darle un toque retro al reset
-            flag := "000";
+            flag <= "000";
             control <= "11111111";
         elsif rising_edge (clk) then --Le pondremos una frecuencia de reloj acorde
             if flag = "000" then
@@ -54,7 +54,7 @@ begin
                         num_led <= "1111110";   --rallita de espera snif
                 end case;
                 
-                flag := flag + 1;
+                flag <= flag + 1;
                 
             elsif flag = "001" then 
                 control <= "11111101" ;
@@ -69,7 +69,7 @@ begin
                         num_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
                 end case;
                 
-                flag := flag + 1;                
+                flag <= flag + 1;                
 
             elsif flag = "010" then
                 control <= "11111011" ;
@@ -84,7 +84,7 @@ begin
                         num_led <= "1001000";    --Dibujo de una H. Significa que algo malo ocurre.
                 end case;  
 
-                flag := flag + 1;                
+                flag <= flag + 1;                
 
             elsif flag = "011" then
                 control <= "11110111" ;
@@ -107,7 +107,7 @@ begin
                         num_led <= "1111110";   --rallita de espera snif
                 end case;
                 
-                flag := flag + 1;                
+                flag <= flag + 1;                
 
             elsif flag = "100" then
                 control <= "11101111" ;
@@ -118,7 +118,7 @@ begin
                         num_led <= "1001111";    
                 end case;  
 
-                flag := flag + 1;       
+                flag <= flag + 1;       
 
             elsif flag = "101" then
                 control <= "11011111" ;
@@ -131,7 +131,7 @@ begin
                         num_led <= "1111111";   
                 end case;  
 
-                flag := flag + 1;          
+                flag <= flag + 1;          
 
             elsif flag = "110" then
                 control <= "10111111" ;
@@ -144,7 +144,7 @@ begin
                         num_led <= "1111111";   
                 end case;  
 
-                flag := flag + 1;  
+                flag <= flag + 1;  
 
             elsif flag = "111" then
                 control <= "01111111" ;
@@ -155,7 +155,7 @@ begin
                         num_led <= "1111001";   
                 end case;  
 
-                flag := flag + 1;  
+                flag <= flag + 1;  
 
             end if;
         end if;

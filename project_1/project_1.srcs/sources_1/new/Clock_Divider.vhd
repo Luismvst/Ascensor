@@ -1,6 +1,8 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use ieee.std_logic_arith.ALL;
+use ieee.std_logic_unsigned.ALL;
 
 entity Clock_Divider is
     Generic (
@@ -23,7 +25,7 @@ begin
     variable count: integer;
     
     begin
-    if(reset='1')   then
+    if(reset='0')   then
         count := 0;
         clk_sig<='0';
     elsif rising_edge(clk)  then

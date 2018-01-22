@@ -66,7 +66,7 @@ architecture Behavioral of FSM is
 		end if;
 	end process;
 
-	MaquinaAcciones : process (presente)	--SALIDA -> Solo cuando cambia el estado (lista de sensibilidad)
+	MaquinaAcciones : process (presente, f_carrera_puerta)	--SALIDA -> Solo cuando cambia el estado (lista de sensibilidad)
 		begin					
 		case presente is
 
@@ -74,7 +74,8 @@ architecture Behavioral of FSM is
 				accion_motor_puerta <= "00";	--Puerta cerrada
 				if f_carrera_puerta /= "01" then
 					accion_motor_puerta <= "01";
-				elsif piso /= "001" and f_carrera_puerta = "01" then 		--Piso supuesto inicial
+                end if;
+				if piso /= "001" and f_carrera_puerta = "01" then 		--Piso supuesto inicial
 					accion_motor <= "01";	--Bajamos al piso inicial
 					accion_motor_puerta <= "00";
 				else 

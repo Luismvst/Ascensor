@@ -154,6 +154,7 @@ begin
         clk => Hz1,
         reset => reset,
         boton => boton_decod,
+        destino => destino_fsm,
         f_carrera_puerta => f_carrera_sim,
         piso => piso_actual,
         sensor_apertura => sensor_apertura,
