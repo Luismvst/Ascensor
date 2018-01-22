@@ -22,7 +22,8 @@ architecture Structural of Top is
     
     --Tipos de relojes
     signal Hz60: std_logic;
-    signal Hz1: std_logic; 
+    signal Hz1: std_logic;
+    signal Hz2: std_logic; 
     
     --FSM
     signal f_carrera_sim : std_logic_vector (1 downto 0);
@@ -136,6 +137,14 @@ begin
         clk_out => Hz60,     
         reset => reset
         );
+
+    Inst_Clock_Divider_FSM:     Clock_Divider
+    GENERIC MAP ( frec => 200000000 )
+    PORT MAP (
+        clk => clk,
+        clk_out => Hz2,     
+        reset => reset
+        );
                 
     Inst_Decoder:   Display7seg 
     PORT MAP (
@@ -189,7 +198,7 @@ begin
 
     Inst_Sim_Puerta : Sim_Puerta 
     PORT MAP (
-        clk => Hz1,
+        clk => Hz2,
         reset => reset,
         sentido => motor_puerta,
         estado_sim => puerta_sim,
