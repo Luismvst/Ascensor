@@ -29,9 +29,9 @@ begin
     display_piso: process (reset, clk)
     begin
         if reset = '1' then
-            num_led <= "1111001";   --Se encenderá todo, para darle un toque retro al reset
+            num_led <= "0000000";   --Se encenderá todo, para darle un toque retro al reset
             flag <= "000";
-            control <= "11111001";
+            control <= "00000000";
         elsif rising_edge (clk) then --Le pondremos una frecuencia de reloj acorde
             if flag = "000" then
                 control <= "11111110";
@@ -149,7 +149,7 @@ begin
             elsif flag = "111" then
                 control <= "01111111" ;
                 case (modo_puerta) is
-                    when "01" =>   
+                    when "10" =>   
                         num_led <= "1001001";   
                     when others => 
                         num_led <= "1111001";   

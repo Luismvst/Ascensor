@@ -70,7 +70,8 @@ architecture Behavioral of FSM is
 		begin					
 		case presente is
 
-			when inicio => --Cuando iniciamos el ascensor por primera vez				
+			when inicio => --Cuando iniciamos el ascensor por primera vez
+				boton_memoria <= "001"				
 				accion_motor_puerta <= "00";	--Puerta cerrada
 				if f_carrera_puerta /= "01" then
 					accion_motor_puerta <= "01";
