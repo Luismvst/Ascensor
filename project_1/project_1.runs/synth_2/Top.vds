@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Mon Jan 22 09:03:15 2018
-# Process ID: 4944
+# Start of session at: Mon Jan 22 14:40:46 2018
+# Process ID: 1920
 # Current directory: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_2
 # Command line: vivado.exe -log Top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Top.tcl
 # Log file: C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_2/Top.vds
@@ -15,20 +15,20 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1972 
+INFO: Helper process launched with PID 3652 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 309.375 ; gain = 75.941
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 309.504 ; gain = 76.785
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:21]
-	Parameter frec bound to: 50000000 - type: integer 
+	Parameter frec bound to: 100000000 - type: integer 
 INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_FSM' of component 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:124]
 INFO: [Synth 8-638] synthesizing module 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
-	Parameter frec bound to: 50000000 - type: integer 
+	Parameter frec bound to: 100000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Clock_Divider' (1#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
-	Parameter frec bound to: 300000000 - type: integer 
+	Parameter frec bound to: 62500 - type: integer 
 INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_Display' of component 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:132]
 INFO: [Synth 8-638] synthesizing module 'Clock_Divider__parameterized1' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
-	Parameter frec bound to: 300000000 - type: integer 
+	Parameter frec bound to: 62500 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Clock_Divider__parameterized1' (1#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
 INFO: [Synth 8-3491] module 'Display7seg' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decoder.vhd:7' bound to instance 'Inst_Decoder' of component 'Display7seg' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:140]
 INFO: [Synth 8-638] synthesizing module 'Display7seg' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decoder.vhd:22]
@@ -56,7 +56,7 @@ INFO: [Synth 8-256] done synthesizing module 'Decod_Piso' (8#1) [C:/Users/Luis/D
 INFO: [Synth 8-3491] module 'Decod_Piso' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:5' bound to instance 'Inst_Decod_Piso' of component 'Decod_Piso' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:206]
 INFO: [Synth 8-256] done synthesizing module 'Top' (9#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 349.453 ; gain = 116.020
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 348.832 ; gain = 116.113
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -66,7 +66,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 349.453 ; gain = 116.020
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 348.832 ; gain = 116.113
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -82,22 +82,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 661.699 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 655.648 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -134,7 +134,7 @@ WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:
 INFO: [Synth 8-3354] encoded FSM with state register 'presente_reg' using encoding 'sequential' in module 'FSM'
 WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -281,7 +281,7 @@ INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_FSM/clk_sig" won't be mapped to RAM
 INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_Display/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_Display/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -293,13 +293,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:47 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -311,7 +311,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,7 +335,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:48 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -348,7 +348,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -360,25 +360,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -396,14 +396,14 @@ Report Cell Usage:
 +------+-------+------+
 |1     |BUFG   |     1|
 |2     |CARRY4 |    16|
-|3     |LUT1   |    64|
+|3     |LUT1   |    63|
 |4     |LUT2   |     6|
 |5     |LUT3   |    15|
 |6     |LUT4   |    22|
 |7     |LUT5   |    85|
 |8     |LUT6   |    27|
-|9     |FDCE   |    77|
-|10    |FDPE   |    19|
+|9     |FDCE   |    81|
+|10    |FDPE   |    15|
 |11    |FDRE   |    10|
 |12    |FDSE   |     1|
 |13    |IBUF   |    12|
@@ -414,9 +414,9 @@ Report Instance Areas:
 +------+-----------------------------+------------------------------+------+
 |      |Instance                     |Module                        |Cells |
 +------+-----------------------------+------------------------------+------+
-|1     |top                          |                              |   370|
+|1     |top                          |                              |   369|
 |2     |  Inst_Clock_Divider_Display |Clock_Divider__parameterized1 |   113|
-|3     |  Inst_Clock_Divider_FSM     |Clock_Divider                 |   114|
+|3     |  Inst_Clock_Divider_FSM     |Clock_Divider                 |   113|
 |4     |  Inst_Decod_Boton           |Decod_Piso                    |     9|
 |5     |  Inst_Decod_Piso            |Decod_Piso_0                  |    14|
 |6     |  Inst_Decoder               |Display7seg                   |    46|
@@ -427,11 +427,11 @@ Report Instance Areas:
 |11    |  Inst_Sim_Puerta            |Sim_Puerta                    |    10|
 +------+-----------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:43 . Memory (MB): peak = 655.648 ; gain = 422.930
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:37 . Memory (MB): peak = 661.699 ; gain = 116.020
-Synthesis Optimization Complete : Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 661.699 ; gain = 428.266
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:34 . Memory (MB): peak = 655.648 ; gain = 116.113
+Synthesis Optimization Complete : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 655.648 ; gain = 422.930
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -442,7 +442,7 @@ No Unisim elements were transformed.
 
 71 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:02:09 . Memory (MB): peak = 661.699 ; gain = 436.027
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.648 ; gain = 430.695
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_2/Top.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 661.699 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Jan 22 09:05:33 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 655.648 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 22 14:41:38 2018...

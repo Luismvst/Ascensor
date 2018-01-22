@@ -20,7 +20,7 @@ signal piso_actual : std_logic_vector (2 downto 0):="011";
 begin
 	Sim_Piso : process (clk, reset)
 	begin
-		if reset = '0' then
+		if reset = '1' then
 			piso_actual <= "011";
 		elsif rising_edge (clk) then
 			if sentido = "10" and piso_actual /= "111" then

@@ -23,7 +23,7 @@ signal estado : std_logic_vector (1 downto 0):="01";
 begin
 	Sim_puerta : process (clk, reset)
 	begin
-		if reset = '0' then
+		if reset = '1' then
 			estado <= "11";
 			f_carrera <= "00";
 		elsif rising_edge (clk) then

@@ -60,3 +60,5 @@ begin
 		assert false
 			report "Todo correcto Sim_Piso"
 			severity failure
+	end process;
+end;

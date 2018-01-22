@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Mon Jan 22 09:06:39 2018
+| Date         : Mon Jan 22 14:42:27 2018
 | Host         : Luis-TOSH running 64-bit Service Pack 1  (build 7601)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -33,8 +33,8 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              10 |            6 |
-| No           | No                    | Yes                    |              96 |           39 |
+| No           | No                    | No                     |              10 |            4 |
+| No           | No                    | Yes                    |              96 |           41 |
 | No           | Yes                   | No                     |               1 |            1 |
 | Yes          | No                    | No                     |               0 |            0 |
 | Yes          | No                    | Yes                    |               0 |            0 |
@@ -45,16 +45,16 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+---------------------------------+---------------+--------------------------------------+------------------+----------------+
-|           Clock Signal          | Enable Signal |           Set/Reset Signal           | Slice Load Count | Bel Load Count |
-+---------------------------------+---------------+--------------------------------------+------------------+----------------+
-|  Inst_Clock_Divider_Display/CLK |               | Inst_FSM/SS[0]                       |                1 |              1 |
-|  Inst_Clock_Divider_FSM/Hz1     |               |                                      |                2 |              3 |
-|  Inst_Clock_Divider_Display/CLK |               |                                      |                4 |              7 |
-|  Inst_Clock_Divider_FSM/Hz1     |               | Inst_Clock_Divider_FSM/clk_sig_reg_0 |                4 |             10 |
-|  Inst_Clock_Divider_Display/CLK |               | reset_IBUF                           |                7 |             20 |
-|  clk_IBUF_BUFG                  |               | Inst_Clock_Divider_FSM/clk_sig_reg_0 |               28 |             66 |
-+---------------------------------+---------------+--------------------------------------+------------------+----------------+
++---------------------------------+---------------+------------------+------------------+----------------+
+|           Clock Signal          | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
++---------------------------------+---------------+------------------+------------------+----------------+
+|  Inst_Clock_Divider_Display/CLK |               | Inst_FSM/SS[0]   |                1 |              1 |
+|  Inst_Clock_Divider_FSM/Hz1     |               |                  |                1 |              3 |
+|  Inst_Clock_Divider_Display/CLK |               |                  |                3 |              7 |
+|  Inst_Clock_Divider_FSM/Hz1     |               | reset_IBUF       |                4 |             10 |
+|  Inst_Clock_Divider_Display/CLK |               | reset_IBUF       |                9 |             20 |
+|  clk_IBUF_BUFG                  |               | reset_IBUF       |               28 |             66 |
++---------------------------------+---------------+------------------+------------------+----------------+
 
 
 +--------+-----------------------+

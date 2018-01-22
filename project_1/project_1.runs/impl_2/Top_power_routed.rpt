@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Mon Jan 22 09:07:43 2018
+| Date             : Mon Jan 22 14:43:23 2018
 | Host             : Luis-TOSH running 64-bit Service Pack 1  (build 7601)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.086 |
-| Dynamic (W)              | 0.002 |
-| Device Static (W)        | 0.084 |
+| Total On-Chip Power (W)  | 1.976 |
+| Dynamic (W)              | 1.885 |
+| Device Static (W)        | 0.091 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 84.6  |
-| Junction Temperature (C) | 25.4  |
+| Max Ambient (C)          | 76.0  |
+| Junction Temperature (C) | 34.0  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,16 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |    <0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      296 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      142 |     63400 |            0.22 |
-|   CARRY4       |    <0.001 |       16 |     15850 |            0.10 |
-|   Register     |    <0.001 |      107 |    126800 |            0.08 |
+| Slice Logic    |     0.997 |      296 |       --- |             --- |
+|   LUT as Logic |     0.923 |      141 |     63400 |            0.22 |
+|   Register     |     0.035 |      107 |    126800 |            0.08 |
+|   CARRY4       |     0.034 |       16 |     15850 |            0.10 |
+|   BUFG         |     0.006 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       16 |       --- |             --- |
-| Signals        |    <0.001 |      252 |       --- |             --- |
-| I/O            |    <0.001 |       27 |       210 |           12.86 |
-| Static Power   |     0.084 |          |           |                 |
-| Total          |     0.086 |          |           |                 |
+| Signals        |     0.844 |      252 |       --- |             --- |
+| I/O            |     0.044 |       27 |       210 |           12.86 |
+| Static Power   |     0.091 |          |           |                 |
+| Total          |     1.976 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,8 +68,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.017 |       0.002 |      0.015 |
-| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
+| Vccint    |       1.000 |     1.906 |       1.885 |      0.021 |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.019 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -121,11 +121,9 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+-------------+--------+-----------------+
-| Clock       | Domain | Constraint (ns) |
-+-------------+--------+-----------------+
-| sys_clk_pin | clk    |            10.0 |
-+-------------+--------+-----------------+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
 
 
 3. Detailed Reports
@@ -137,17 +135,17 @@ Table of Contents
 +------------------------------+-----------+
 | Name                         | Power (W) |
 +------------------------------+-----------+
-| Top                          |     0.002 |
-|   Inst_Clock_Divider_Display |    <0.001 |
-|   Inst_Clock_Divider_FSM     |    <0.001 |
-|   Inst_Decod_Boton           |    <0.001 |
-|   Inst_Decod_Piso            |    <0.001 |
-|   Inst_Decoder               |    <0.001 |
-|   Inst_FSM                   |    <0.001 |
+| Top                          |     1.885 |
+|   Inst_Clock_Divider_Display |     0.508 |
+|   Inst_Clock_Divider_FSM     |     0.501 |
+|   Inst_Decod_Boton           |     0.025 |
+|   Inst_Decod_Piso            |     0.018 |
+|   Inst_Decoder               |     0.545 |
+|   Inst_FSM                   |     0.049 |
 |   Inst_Motor_Ascensor        |     0.000 |
 |   Inst_Motor_Puerta          |    <0.001 |
 |   Inst_Sim_Piso              |     0.000 |
-|   Inst_Sim_Puerta            |    <0.001 |
+|   Inst_Sim_Puerta            |     0.114 |
 +------------------------------+-----------+
 
 

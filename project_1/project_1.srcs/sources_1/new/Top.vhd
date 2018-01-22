@@ -122,7 +122,7 @@ architecture Structural of Top is
 begin
     
     Inst_Clock_Divider_FSM:     Clock_Divider
-    GENERIC MAP ( frec => 50000000 )
+    GENERIC MAP ( frec => 100000000 )
     PORT MAP (
         clk => clk,
         clk_out => Hz1,     
@@ -130,7 +130,7 @@ begin
         );
         
     Inst_Clock_Divider_Display:     Clock_Divider
-    GENERIC MAP ( frec => 300000000 )
+    GENERIC MAP ( frec => 62500 )
     PORT MAP (
         clk => clk,
         clk_out => Hz60,     

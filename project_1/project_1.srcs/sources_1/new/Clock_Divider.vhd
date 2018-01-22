@@ -25,7 +25,7 @@ begin
     variable count: integer;
     
     begin
-    if(reset='0')   then
+    if(reset='1')   then
         count := 0;
         clk_sig<='0';
     elsif rising_edge(clk)  then

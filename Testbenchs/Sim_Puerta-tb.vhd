@@ -67,5 +67,6 @@ begin
 			report "Todo correcto Sim_Puerta"
 			severity failure
 
-
+	end process;
+end;
 
