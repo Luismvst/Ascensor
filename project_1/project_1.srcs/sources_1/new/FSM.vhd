@@ -29,7 +29,7 @@ architecture Behavioral of FSM is
 	begin
 	MaquinaEstados : process (reset, clk)	--FSM
 		begin
-		if reset = '1' then presente <= reposo;
+		if reset = '1' then presente <= inicio;
 		elsif rising_edge (clk) then
 			case presente is
 				when inicio => --Por si al empezar tenemos que ajustar el ascensor
@@ -42,9 +42,9 @@ architecture Behavioral of FSM is
 						presente <= cerrar;
 					end if;
 				when cerrar => --cerrando puertas
-					--if sensor_presencia = '1' then
-						--presente <= abrir;
-					if f_carrera_puerta = "01" then 
+					if sensor_presencia = '1' then
+						presente <= abrir;
+					elsif f_carrera_puerta = "01" then 
 						presente <= marcha; 	--Se puede emprender el movimiento
 					end if;
 				when marcha => --Moviendose
@@ -71,8 +71,7 @@ architecture Behavioral of FSM is
 		case presente is
 
 			when inicio => --Cuando iniciamos el ascensor por primera vez
-				--boton_memoria := "001"	;			
-				--accion_motor_puerta <= "00";	--Puerta cerrada
+				boton_memoria := "001"	;
 				if f_carrera_puerta /= "01" then
 					accion_motor_puerta <= "01";
                 end if;

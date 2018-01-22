@@ -112,7 +112,7 @@ begin
             elsif flag = "100" then
                 control <= "11101111" ;
                 case (modo_puerta) is
-                    when "10" =>   
+                    when "01" =>   
                         num_led <= "1001001";   
                     when others => 
                         num_led <= "1001111";    
@@ -123,9 +123,9 @@ begin
             elsif flag = "101" then
                 control <= "11011111" ;
                 case (modo_puerta) is
-                    when "01" =>   
+                    when "10" =>   
                         num_led <= "1001111";    
-                    when "00" => 
+                    when "11" => 
                         num_led <= "1111001";    
                     when others => 
                         num_led <= "1111111";   
@@ -136,9 +136,9 @@ begin
             elsif flag = "110" then
                 control <= "10111111" ;
                 case (modo_puerta) is
-                    when "01" =>   
+                    when "10" =>   
                         num_led <= "1111001";    
-                    when "00" => 
+                    when "11" => 
                         num_led <= "1001111";    
                     when others => 
                         num_led <= "1111111";   
@@ -149,7 +149,7 @@ begin
             elsif flag = "111" then
                 control <= "01111111" ;
                 case (modo_puerta) is
-                    when "10" =>   
+                    when "01" =>   
                         num_led <= "1001001";   
                     when others => 
                         num_led <= "1111001";   
