@@ -122,7 +122,7 @@ architecture Structural of Top is
     END COMPONENT;
 begin
     
-    Inst_Clock_Divider_FSM:     Clock_Divider
+    Inst_Clock_Divider_SIM_Pisos:     Clock_Divider
     GENERIC MAP ( frec => 100000000 )
     PORT MAP (
         clk => clk,
@@ -138,7 +138,7 @@ begin
         reset => reset
         );
 
-    Inst_Clock_Divider_FSM:     Clock_Divider
+    Inst_Clock_Divider_SIM_Puerta:     Clock_Divider
     GENERIC MAP ( frec => 200000000 )
     PORT MAP (
         clk => clk,

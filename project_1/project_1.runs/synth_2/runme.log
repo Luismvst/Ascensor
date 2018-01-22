@@ -14,49 +14,53 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t-csg324'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4540 
+INFO: Helper process launched with PID 5004 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 324.344 ; gain = 79.766
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 309.988 ; gain = 76.977
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:21]
+INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:21]
 	Parameter frec bound to: 100000000 - type: integer 
-INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_FSM' of component 'Clock_Divider' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:124]
-INFO: [Synth 8-638] synthesizing module 'Clock_Divider' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
+INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_SIM_Pisos' of component 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:125]
+INFO: [Synth 8-638] synthesizing module 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
 	Parameter frec bound to: 100000000 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Clock_Divider' (1#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'Clock_Divider' (1#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
 	Parameter frec bound to: 62500 - type: integer 
-INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_Display' of component 'Clock_Divider' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:132]
-INFO: [Synth 8-638] synthesizing module 'Clock_Divider__parameterized1' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
+INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_Display' of component 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:133]
+INFO: [Synth 8-638] synthesizing module 'Clock_Divider__parameterized1' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
 	Parameter frec bound to: 62500 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Clock_Divider__parameterized1' (1#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
-INFO: [Synth 8-3491] module 'Display7seg' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decoder.vhd:7' bound to instance 'Inst_Decoder' of component 'Display7seg' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:140]
-INFO: [Synth 8-638] synthesizing module 'Display7seg' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decoder.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'Display7seg' (2#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decoder.vhd:22]
-INFO: [Synth 8-3491] module 'FSM' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:8' bound to instance 'Inst_FSM' of component 'FSM' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:152]
-INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:24]
-WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:28]
-WARNING: [Synth 8-614] signal 'piso' is read in the process but is not in the sensitivity list [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:69]
-INFO: [Synth 8-256] done synthesizing module 'FSM' (3#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:24]
-INFO: [Synth 8-3491] module 'Control_Motor_Puerta' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Motor_Puerta.vhd:7' bound to instance 'Inst_Motor_Puerta' of component 'Control_Motor_Puerta' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:167]
-INFO: [Synth 8-638] synthesizing module 'Control_Motor_Puerta' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Motor_Puerta.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'Control_Motor_Puerta' (4#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Motor_Puerta.vhd:15]
-INFO: [Synth 8-3491] module 'Control_Motor_Ascensor' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Motor_Ascensor.vhd:8' bound to instance 'Inst_Motor_Ascensor' of component 'Control_Motor_Ascensor' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:174]
-INFO: [Synth 8-638] synthesizing module 'Control_Motor_Ascensor' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Motor_Ascensor.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'Control_Motor_Ascensor' (5#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Motor_Ascensor.vhd:16]
-INFO: [Synth 8-3491] module 'Sim_Piso' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Sim_Piso.vhd:7' bound to instance 'Inst_Sim_Piso' of component 'Sim_Piso' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:182]
-INFO: [Synth 8-638] synthesizing module 'Sim_Piso' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Sim_Piso.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'Sim_Piso' (6#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Sim_Piso.vhd:16]
-INFO: [Synth 8-3491] module 'Sim_Puerta' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Sim_Puerta.vhd:7' bound to instance 'Inst_Sim_Puerta' of component 'Sim_Puerta' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:190]
-INFO: [Synth 8-638] synthesizing module 'Sim_Puerta' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Sim_Puerta.vhd:17]
-INFO: [Synth 8-256] done synthesizing module 'Sim_Puerta' (7#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Sim_Puerta.vhd:17]
-INFO: [Synth 8-3491] module 'Decod_Piso' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:5' bound to instance 'Inst_Decod_Boton' of component 'Decod_Piso' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:199]
-INFO: [Synth 8-638] synthesizing module 'Decod_Piso' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'Decod_Piso' (8#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:13]
-INFO: [Synth 8-3491] module 'Decod_Piso' declared at 'C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:5' bound to instance 'Inst_Decod_Piso' of component 'Decod_Piso' [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:206]
-INFO: [Synth 8-256] done synthesizing module 'Top' (9#1) [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/Top.vhd:21]
-WARNING: [Synth 8-3331] design FSM has unconnected port sensor_presencia
+INFO: [Synth 8-256] done synthesizing module 'Clock_Divider__parameterized1' (1#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
+	Parameter frec bound to: 200000000 - type: integer 
+INFO: [Synth 8-3491] module 'Clock_Divider' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:7' bound to instance 'Inst_Clock_Divider_SIM_Puerta' of component 'Clock_Divider' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:141]
+INFO: [Synth 8-638] synthesizing module 'Clock_Divider__parameterized3' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
+	Parameter frec bound to: 200000000 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Clock_Divider__parameterized3' (1#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Clock_Divider.vhd:19]
+INFO: [Synth 8-3491] module 'Display7seg' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decoder.vhd:7' bound to instance 'Inst_Decoder' of component 'Display7seg' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'Display7seg' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decoder.vhd:22]
+INFO: [Synth 8-256] done synthesizing module 'Display7seg' (2#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decoder.vhd:22]
+INFO: [Synth 8-3491] module 'FSM' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:8' bound to instance 'Inst_FSM' of component 'FSM' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:161]
+INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:24]
+WARNING: [Synth 8-613] shared variable will be implemented as local to architecture [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:28]
+WARNING: [Synth 8-614] signal 'piso' is read in the process but is not in the sensitivity list [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:69]
+INFO: [Synth 8-256] done synthesizing module 'FSM' (3#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:24]
+INFO: [Synth 8-3491] module 'Control_Motor_Puerta' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Motor_Puerta.vhd:7' bound to instance 'Inst_Motor_Puerta' of component 'Control_Motor_Puerta' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:176]
+INFO: [Synth 8-638] synthesizing module 'Control_Motor_Puerta' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Motor_Puerta.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'Control_Motor_Puerta' (4#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Motor_Puerta.vhd:15]
+INFO: [Synth 8-3491] module 'Control_Motor_Ascensor' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Motor_Ascensor.vhd:8' bound to instance 'Inst_Motor_Ascensor' of component 'Control_Motor_Ascensor' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:183]
+INFO: [Synth 8-638] synthesizing module 'Control_Motor_Ascensor' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Motor_Ascensor.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Control_Motor_Ascensor' (5#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Motor_Ascensor.vhd:16]
+INFO: [Synth 8-3491] module 'Sim_Piso' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Sim_Piso.vhd:7' bound to instance 'Inst_Sim_Piso' of component 'Sim_Piso' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'Sim_Piso' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Sim_Piso.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'Sim_Piso' (6#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Sim_Piso.vhd:16]
+INFO: [Synth 8-3491] module 'Sim_Puerta' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Sim_Puerta.vhd:7' bound to instance 'Inst_Sim_Puerta' of component 'Sim_Puerta' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:199]
+INFO: [Synth 8-638] synthesizing module 'Sim_Puerta' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Sim_Puerta.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'Sim_Puerta' (7#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Sim_Puerta.vhd:17]
+INFO: [Synth 8-3491] module 'Decod_Piso' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:5' bound to instance 'Inst_Decod_Boton' of component 'Decod_Piso' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:208]
+INFO: [Synth 8-638] synthesizing module 'Decod_Piso' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Decod_Piso' (8#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:13]
+INFO: [Synth 8-3491] module 'Decod_Piso' declared at 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Decod_Piso.vhd:5' bound to instance 'Inst_Decod_Piso' of component 'Decod_Piso' [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:215]
+INFO: [Synth 8-256] done synthesizing module 'Top' (9#1) [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/Top.vhd:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 363.605 ; gain = 119.027
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 349.066 ; gain = 116.055
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -66,39 +70,41 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 363.605 ; gain = 119.027
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 349.066 ; gain = 116.055
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/sed/Desktop/project_1/project_1.srcs/constrs_1/imports/Ascensor/Nexys-4-DDR-Master.xdc]
-Finished Parsing XDC File [C:/Users/sed/Desktop/project_1/project_1.srcs/constrs_1/imports/Ascensor/Nexys-4-DDR-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/sed/Desktop/project_1/project_1.srcs/constrs_1/imports/Ascensor/Nexys-4-DDR-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
+Parsing XDC File [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/constrs_1/imports/Ascensor/Nexys-4-DDR-Master.xdc]
+Finished Parsing XDC File [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/constrs_1/imports/Ascensor/Nexys-4-DDR-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/constrs_1/imports/Ascensor/Nexys-4-DDR-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 669.387 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 655.633 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -114,26 +120,27 @@ INFO: [Synth 8-5544] ROM "num_led" won't be mapped to Block RAM because address 
 INFO: [Synth 8-5544] ROM "num_led" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "num_led" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'presente_reg' in module 'FSM'
-WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
 INFO: [Synth 8-5544] ROM "accion_motor_puerta" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "presente" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "presente" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "salida" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
-WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
                   inicio |                              000 |                              000
-                  reposo |                              001 |                              100
-                  cerrar |                              010 |                              001
-                  marcha |                              011 |                              011
-                   abrir |                              100 |                              010
+                   abrir |                              001 |                              010
+                  reposo |                              010 |                              100
+                  cerrar |                              011 |                              001
+                  marcha |                              100 |                              011
               emergencia |                              101 |                              101
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'presente_reg' using encoding 'sequential' in module 'FSM'
-WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/sed/Desktop/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element presente_reg was removed.  [C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.srcs/sources_1/new/FSM.vhd:32]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -146,27 +153,27 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 3     
 	   2 Input      3 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 3     
 	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
 	                3 Bit    Registers := 5     
 	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 3     
 	   8 Input      8 Bit        Muxes := 1     
 	  34 Input      7 Bit        Muxes := 1     
 	   8 Input      7 Bit        Muxes := 1     
 	   6 Input      3 Bit        Muxes := 1     
-	   7 Input      3 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 4     
 	   6 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 7     
 	   8 Input      1 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -196,6 +203,16 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
+Module Clock_Divider__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module Display7seg 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -214,10 +231,10 @@ Detailed RTL Component Info :
 	                3 Bit    Registers := 1     
 +---Muxes : 
 	   6 Input      3 Bit        Muxes := 1     
-	   7 Input      3 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   6 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
 	   6 Input      1 Bit        Muxes := 2     
 Module Control_Motor_Puerta 
 Detailed RTL Component Info : 
@@ -269,19 +286,22 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_FSM/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_FSM/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Pisos/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Pisos/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_Display/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_Display/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Puerta/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Puerta/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "Inst_Decod_Boton/salida" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Inst_Decod_Piso/salida" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_FSM/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_FSM/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Pisos/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Pisos/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_Display/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_Display/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-WARNING: [Synth 8-3331] design Top has unconnected port sensor_presencia
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Puerta/count" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Inst_Clock_Divider_SIM_Puerta/clk_sig" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -293,13 +313,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -311,7 +331,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Technology Mapping : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -335,7 +355,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -348,7 +368,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -360,25 +380,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -395,54 +415,55 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    16|
-|3     |LUT1   |    63|
-|4     |LUT2   |     7|
-|5     |LUT3   |    11|
-|6     |LUT4   |    35|
-|7     |LUT5   |    78|
-|8     |LUT6   |    19|
-|9     |MUXF7  |     4|
-|10    |FDCE   |    90|
-|11    |FDPE   |     6|
+|2     |CARRY4 |    24|
+|3     |LUT1   |    94|
+|4     |LUT2   |     4|
+|5     |LUT3   |    13|
+|6     |LUT4   |    37|
+|7     |LUT5   |   116|
+|8     |LUT6   |    22|
+|9     |MUXF7  |     2|
+|10    |FDCE   |   124|
+|11    |FDPE   |     5|
 |12    |FDRE   |    11|
-|13    |IBUF   |    11|
+|13    |IBUF   |    12|
 |14    |OBUF   |    15|
 +------+-------+------+
 
 Report Instance Areas: 
-+------+-----------------------------+------------------------------+------+
-|      |Instance                     |Module                        |Cells |
-+------+-----------------------------+------------------------------+------+
-|1     |top                          |                              |   368|
-|2     |  Inst_Clock_Divider_Display |Clock_Divider__parameterized1 |   113|
-|3     |  Inst_Clock_Divider_FSM     |Clock_Divider                 |   113|
-|4     |  Inst_Decod_Boton           |Decod_Piso                    |    10|
-|5     |  Inst_Decod_Piso            |Decod_Piso_0                  |    13|
-|6     |  Inst_Decoder               |Display7seg                   |    39|
-|7     |  Inst_FSM                   |FSM                           |    26|
-|8     |  Inst_Motor_Ascensor        |Control_Motor_Ascensor        |     3|
-|9     |  Inst_Motor_Puerta          |Control_Motor_Puerta          |     3|
-|10    |  Inst_Sim_Piso              |Sim_Piso                      |     6|
-|11    |  Inst_Sim_Puerta            |Sim_Puerta                    |    14|
-+------+-----------------------------+------------------------------+------+
++------+--------------------------------+------------------------------+------+
+|      |Instance                        |Module                        |Cells |
++------+--------------------------------+------------------------------+------+
+|1     |top                             |                              |   481|
+|2     |  Inst_Clock_Divider_Display    |Clock_Divider__parameterized1 |   113|
+|3     |  Inst_Clock_Divider_SIM_Pisos  |Clock_Divider                 |   113|
+|4     |  Inst_Clock_Divider_SIM_Puerta |Clock_Divider__parameterized3 |   113|
+|5     |  Inst_Decod_Boton              |Decod_Piso                    |    10|
+|6     |  Inst_Decod_Piso               |Decod_Piso_0                  |    15|
+|7     |  Inst_Decoder                  |Display7seg                   |    39|
+|8     |  Inst_FSM                      |FSM                           |    27|
+|9     |  Inst_Motor_Ascensor           |Control_Motor_Ascensor        |     3|
+|10    |  Inst_Motor_Puerta             |Control_Motor_Puerta          |     3|
+|11    |  Inst_Sim_Piso                 |Sim_Piso                      |     6|
+|12    |  Inst_Sim_Puerta               |Sim_Puerta                    |    10|
++------+--------------------------------+------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 669.387 ; gain = 424.809
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 669.387 ; gain = 119.027
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 669.387 ; gain = 424.809
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 655.633 ; gain = 116.055
+Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 655.633 ; gain = 422.621
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 27 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-70 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+80 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 669.387 ; gain = 432.570
-INFO: [Common 17-1381] The checkpoint 'C:/Users/sed/Desktop/project_1/project_1.runs/synth_2/Top.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 669.387 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Jan 22 20:03:11 2018...
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 655.633 ; gain = 430.387
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Luis/Documents/GitHub/Ascensor/project_1/project_1.runs/synth_2/Top.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 655.633 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 22 21:33:20 2018...
